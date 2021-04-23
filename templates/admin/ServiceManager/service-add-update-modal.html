@@ -1,0 +1,81 @@
+<!-- Modal Thêm mới dịch vụ , chỉnh sửa dịch vụ  -->
+<div class="box-body">
+        <div class="modal fade" id="modal-addService-updateService">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Thông Tin Dịch Vụ</h4>
+                        <div class="overlay text-center">
+                            <i class="fa fa-spinner fa-spin fa-3x fa-fw text-blue" id="refreshAnnimationService"></i>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form id="serviceInfo" method="POST">
+                            <input type="hidden" value="addService">
+                            <div class="form-group">
+                                <label for="nameService">Tên dịch vụ:</label>
+                                <input type="text" class="form-control" id="nameService" name="nameService"
+                                    placeholder="Vd: coca cola">
+                            </div>
+                            <div class="form-group">
+                                    <label for="nameService">Code:</label>
+                                    <input type="text" class="form-control" id="codeService" name="codeService">
+                                </div>
+                            <div class="form-group">
+                                <label for="price">Giá:</label>
+                                <input type="number"class="form-control" id="price"
+                                    name="price">
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceType">Loại: </label>
+                                <select name="serviceType" id="serviceType" class="form-control">
+                                    {% for serviceType in serviceTypes %}
+                                            {% if serviceType.active == "1" %}
+                                                <option value='{{ serviceType.id }}' >{{ serviceType.name }}</option>
+                                            {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="unit">Đơn vị:</label>
+                                <select name="unit" id="unit" class="form-control">
+                                        <option value="Lon">Lon</option>
+                                        <option value="Chai">Chai</option>
+                                        <option value="Dĩa">Dĩa</option>
+                                        <option value="Tô">Tô</option>
+                                        <option value="Cái">Cái</option>
+                                        <option value="Lần">Lần</option>
+                                        <option value="Ly">Ly</option>
+                                        <option value="Gói">Gói</option>
+                                        <option value="Hộp">Hộp</option>
+                                        <option value="Bịch">Bịch</option>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                    <label for="status">Tình trạng: </label>
+                                    <select name="status" id="status" class="form-control">
+                                        <option value="1">Còn</option>
+                                        <option value="0">Hết</option>
+                                    </select>
+                                </div>
+    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <label id="resultService" class="pull-left text-red"></label>
+                        <button type="button" class="btn btn-default m-r-10" data-dismiss="modal">Đóng</button>                      
+                        <button type="button" class="btn btn-primary" id="add-or-update-service">Lưu</button
+
+                    </div>
+                 
+    
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>

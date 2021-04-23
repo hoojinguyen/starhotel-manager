@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Hotel Management</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   
+    <!-- <link rel="stylesheet" href="/assets/plugins/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/assets/plugins/datetimepicker/jquery.datetimepicker.min.css">
+
+
+    
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css"> -->
+
+    <link rel="stylesheet" href="/_temp/AdminLTE-2.4.10/plugins/iCheck/all.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/assets/plugins/Ionicons/css/ionicons.min.css">
+
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/css/AdminLTE.min.css">
+
+    <link rel="stylesheet" href="/assets/css/skins/skin-blue.min.css">
+
+    
+    <link rel="stylesheet" href="/assets/css/romi-theme.css">
+   
+    <link rel="stylesheet" href="/assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/dist/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <!--Date-Picker Stylesheet-->
+    <link rel="stylesheet" href="/assets/pluginsClient/css/datepicker.css">
+
+
+  
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+
+</head>
+
+<body class="sidebar-mini skin-blue fixed">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>AHT</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Admin</b>HOTEL</span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu hidden">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 4 messages</li>
+                                <li>
+                                    <!-- inner menu: contains the messages -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- start message -->
+                                            <a href="#">
+                                                <div class="pull-left">
+                                                    <!-- User Image -->
+                                                    <img src="/assets/img/user2-160x160.jpg" class="img-circle"
+                                                        alt="User Image">
+                                                </div>
+                                                <!-- Message title and timestamp -->
+                                                <h4>
+                                                    Support Team
+                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                </h4>
+                                                <!-- The message -->
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <!-- end message -->
+                                    </ul>
+                                    <!-- /.menu -->
+                                </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <!-- /.messages-menu -->
+
+                        <!-- Notifications Menu -->
+                        <li class="dropdown notifications-menu hidden">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu hidden">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <!-- Inner Menu: contains the notifications -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- start notification -->
+                                            <a href="#">
+                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                        <!-- end notification -->
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks Menu -->
+                        <li class="dropdown tasks-menu hidden">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <!-- Inner menu: contains the tasks -->
+                                    <ul class="menu">
+                                        <li>
+                                            <!-- Task item -->
+                                            <a href="#">
+                                                <!-- Task title and progress text -->
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+                                                <!-- The progress bar -->
+                                                <div class="progress xs">
+                                                    <!-- Change the css width attribute to simulate progress -->
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                        role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                        aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!-- end task item -->
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu hidden">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="/assets/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="/assets/img/avatar2.png" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        Alexander Pierce - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#modal-signout"><i
+                                    class="glyphicon glyphicon-off"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        {% if usertypes == "admin" %}
+                        <img src="/assets/img/avatar5.png" class="img-circle" alt="User Image"> {% endif %}
+                        {% if usertypes == "staff" %}
+                        <img src="/assets/img/avatar2.png" class="img-circle" alt="User Image"> {% endif %}
+                    </div>
+
+                </div>
+
+                <!-- search form (Optional) -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                                    class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+
+
+
+                <!-- Sidebar Menu Admin -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header"></li>
+                    <!-- Optionally, you can add icons to the links -->
+                    <li class="active"><a href="/admin/dashboard"><i class="fa fa-home"></i> <span>Màn Hình
+                                Chính</span></a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-info"></i> <span>Thông Tin</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/infohotel">Tổng Hợp Thông Tin</a></li>
+                            <li><a href="/admin/hotelmap">Sơ Đồ Khách Sạn</a></li>
+                            <li><a href="/admin/infopriceroom">Loại Phòng & Giá</a></li>
+                            <li><a href="/admin/service">Dịch Vụ</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="/admin/guest/list"><i class="fa fa-users"></i> <span>Khách Hàng</span></a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-bed"></i> <span>Phòng</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/room/pricequote"><i class="fa fa-money"></i> Báo giá</a>
+                            </li>
+                            <li><a href="/admin/room/bookroom"><i class="glyphicon glyphicon-tags"></i> Đặt Phòng</a>
+                            </li>
+                            <li><a href="/admin/room/checkin"><i class="fa fa-cc-paypal"></i> Nhận phòng</a></li>
+                            <li><a href="/admin/room/checkout"><i class="fa fa-cc-visa"></i> Trả phòng</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span>Quản Lý</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/manager/room"><i class="glyphicon glyphicon-bed"></i>Phòng</a></li>
+                            <li><a href="/admin/manage/device"><i class="glyphicon glyphicon-inbox"></i>Trang Thiết
+                                    Bị</a></li>
+                            <li><a href="/admin/guest/list"><i class="fa fa-users"></i>Khách Hàng</a></li>
+                            <li><a href="/admin/manager/service"><i class="fa fa-coffee"></i>Dịch Vụ</a></li>
+                            <li><a href="/admin/employee"><i class="fa fa-user"></i>Nhân Viên</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-book"></i> <span>Thống Kê & Báo Cáo</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/report"><i class="fa fa-calculator"></i>Báo Cáo</a></li>
+                            <li><a href="/admin/guestovernight"><i class="fa fa-child"></i>Khách Hàng Qua Đêm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/admin/system/setting"><i class="fa fa-gear"></i> <span>Cấu Hình Hệ Thống</span></a>
+                    </li>
+                </ul>
+                <!-- /.sidebar-menu Admin -->
+
+
+
+
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    {% block pageHeader %} {{ pageHeader }} {% endblock %}
+                    <small>{% block pageDescription %} {{pageDescription}} {% endblock %}</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/admin/dashboard"><i class="fa fa-home"></i> Màn hình chính</a></li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content container-fluid">
+                <!--------------------------
+					  | Your Page Content Here |
+					  -------------------------->
+                {% block content %}
+                <div class="row" style="margin-top:80px;">
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h3>ĐẶT PHÒNG</h3>
+
+                                <p>Book Room</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-tags"></i>
+                            </div>
+                            <a href="/admin/room/bookroom" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-aqua">
+                            <div class="inner">
+                                <h3>NHẬN PHÒNG</h3>
+
+                                <p>Service</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-address-card"></i>
+                            </div>
+                            <a href="/admin/room/checkin" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-red">
+                            <div class="inner">
+                                <h3>THANH TOÁN</h3>
+
+                                <p>Payment</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-cc-visa"></i>
+                            </div>
+                            <a href="/admin/room/checkout" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-yellow">
+                            <div class="inner">
+                                <h3>KHÁCH HÀNG</h3>
+
+                                <p>Guest</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <a href="/admin/guest/list" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+
+                    <!-- ./col -->
+                </div>
+                <div class="row" style="margin-top:40px;">
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-blue">
+                            <div class="inner">
+                                <h3>PHÒNG</h3>
+
+                                <p>Room</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-bed"></i>
+                            </div>
+                            <a href="/admin/manager/room" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-teal">
+                            <div class="inner">
+                                <h3>THIẾT BỊ</h3>
+
+                                <p>Device</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-calculator"></i>
+                            </div>
+                            <a href="/admin/manage/device" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-purple">
+                            <div class="inner">
+                                <h3>DỊCH VỤ</h3>
+
+                                <p>Service</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-coffee"></i>
+                            </div>
+                            <a href="/admin/manager/service" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-maroon">
+                            <div class="inner">
+                                <h3>BÁO CÁO</h3>
+
+                                <p>Report</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-bar-chart"></i>
+                            </div>
+                            <a href="/admin/report" class="small-box-footer">
+                                Đi tới <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                {% endblock %}
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                Địa Chỉ: 21/29A Vạn Kiếp, Bình Thạnh.
+                <small class="text-bold">SĐT: 038945027</small>
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2019 <a>Hai Thanh 2 Hotel.</a></strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside>
+
+            <div class="modal fade" id="modal-signout">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Cảnh báo</h4>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc chắn muốn đăng xuất ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Không</button>
+                            <form action="/admin/logout" method="POST">
+                                <button type="submit" name="ok" id="confirm-signout" class="btn btn-danger">Có</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+				immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+
+    <script type="text/javascript">
+        var base_url = "";
+        var file_update_message = "";
+        var default_lang = "vn";
+    </script>
+    <script src="/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/plugins/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+
+
+    <script src="/assets/plugins/Validate/moment.js"></script>
+    <script src="/assets/plugins/Validate/jquery.validate.min.js"></script>
+    <script src="/assets/plugins/Validate/messages_vi.js"></script>
+
+
+    <script src="/assets/plugins/iCheck/icheck.min.js"></script>
+    <script src="/assets/plugins/jjquery/jquery-ui.js"></script>
+
+
+    <!-- AdminLTE App -->
+    <script type="text/javascript" src="/assets/js/adminlte.min.js">
+    </script>
+
+
+
+    {% block pageJavascript %} {{ pageJavascript }} {% endblock %}
+
+
+
+
+
+</body>
+
+</html>

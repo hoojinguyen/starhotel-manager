@@ -1,0 +1,71 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+<div class="row" style="margin-top: 60px;">
+        <div class="col-md-6">
+                <!-- Widget: user widget style 1 -->
+                <div class="box box-widget widget-user-2">
+                  <!-- Add the bg color to the header using any of the bg-* classes -->
+                  <div class="widget-user-header bg-yellow">
+                  
+                    <!-- /.widget-user-image -->
+                    <h3 class="widget-user-username">PHÒNG ĐƠN</h3>
+                    <h5 class="widget-user-desc">Single Room</h5>
+                  </div>
+                
+                  <div class="box-footer no-padding">
+                    <ul class="nav nav-stacked">
+                      <li><a>Giờ đầu <span class="pull-right badge bg-blue">{{paramsSingle.firstHourPrice1}}</span></a></li>
+                      <li><a>Giờ tiếp theo <span class="pull-right badge bg-blue">{{paramsSingle.nextHourPrice1}}</span></a></li>
+                      <li><a >Giờ đầu sau 23h <span class="pull-right badge bg-blue">{{paramsSingle.firstHourAfter23h1}}</span></a></li>
+                      <li><a>Giờ tiếp theo sau 23h <span class="pull-right badge bg-blue">{{paramsSingle.nextHourAfter23h1}}</span></a></li>
+                      <li><a>Theo ngày <span class="pull-right badge bg-green">{{paramsSingle.dayPrice1}}</span></a></li>
+                      <li><a>Ngày cuối tuần<span class="pull-right badge bg-green">{{paramsSingle.weekendDayPrice1}}</span></a></li>
+                      <li><a>Qua đêm <span class="pull-right badge bg-red">{{paramsSingle.nightPrice1}}</span></a></li>
+                      <li><a>Qua đêm cuối tuần <span class="pull-right badge bg-red">{{paramsSingle.weekendNightPrice1}}</span></a></li>
+                      <li><a>Lố giờ <span class="pull-right badge bg-yellow">{{paramsSingle.OTHourPrice1}}</span></a></li>
+                      <li><a>Vào sớm <span class="pull-right badge bg-yellow">{{paramsSingle.earlyHourPrice1 }}</span></a></li>
+                      <li><a>Phụ phí <span class="pull-right badge bg-yellow">{{paramsSingle.surcharge }}</span></a></li>
+                    </ul>
+                  </div>
+           
+                </div>
+                <!-- /.widget-user -->
+              </div>
+              <div class="col-md-6">
+                    <!-- Widget: user widget style 1 -->
+                    <div class="box box-widget widget-user-2">
+                      <!-- Add the bg color to the header using any of the bg-* classes -->
+                      <div class="widget-user-header bg-aqua">
+                        <!-- /.widget-user-image -->
+                        <h3 class="widget-user-username">PHÒNG ĐÔI</h3>
+                        <h5 class="widget-user-desc">Double Room</h5>
+                      </div>
+                      <div class="box-footer no-padding">
+                            <ul class="nav nav-stacked">
+                                    <li><a>Giờ đầu <span class="pull-right badge bg-blue">{{paramDouble.firstHourPrice2}}</span></a></li>
+                                    <li><a>Giờ tiếp theo <span class="pull-right badge bg-blue">{{paramDouble.nextHourPrice2}}</span></a></li>
+                                    <li><a >Giờ đầu sau 23h <span class="pull-right badge bg-blue">{{paramDouble.firstHourAfter23h2}}</span></a></li>
+                                    <li><a>Giờ tiếp theo sau 23h <span class="pull-right badge bg-blue">{{paramDouble.nextHourAfter23h2}}</span></a></li>
+                                    <li><a>Theo ngày <span class="pull-right badge bg-green">{{paramDouble.dayPrice2}}</span></a></li>
+                                    <li><a>Ngày cuối tuần<span class="pull-right badge bg-green">{{paramDouble.weekendDayPrice2}}</span></a></li>
+                                    <li><a>Qua đêm <span class="pull-right badge bg-red">{{paramDouble.nightPrice2}}</span></a></li>
+                                    <li><a>Qua đêm cuối tuần <span class="pull-right badge bg-red">{{paramDouble.weekendNightPrice2}}</span></a></li>
+                                    <li><a>Lố giờ <span class="pull-right badge bg-yellow">{{paramDouble.OTHourPrice2}}</span></a></li>
+                                    <li><a>Vào sớm <span class="pull-right badge bg-yellow">{{paramDouble.earlyHourPrice2 }}</span></a></li>
+                                    <li><a>Phụ phí <span class="pull-right badge bg-yellow">{{paramDouble.surcharge }}</span></a></li>
+                                  </ul>
+                      </div>
+                    </div>
+                    <!-- /.widget-user -->
+                  </div>
+</div>
+
+
+
+{% endblock %}

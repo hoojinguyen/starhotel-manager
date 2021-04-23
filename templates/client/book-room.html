@@ -1,0 +1,181 @@
+{% extends "/client/homepage.html" %}
+{% block content %}
+
+<!--============= PAGE-COVER =============-->
+<section class="page-cover" id="reservation-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="page-title">Đặt phòng</h1>
+            </div><!-- end columns -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end page-cover -->
+
+</div><!-- end home-container -->
+
+
+
+
+<!--=============INNERPAGE-WRAPPER ===========-->
+<section id="reservation-page" class="innerpage-wrapper">
+
+    <div id="reservation" class="search-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="space-right">
+                        <div class="innerpage-heading">
+                            <h1>Thông tin liên lạc</h1>
+                        </div><!-- end innerpage-heading -->
+
+                        <form id="bookRoomNow">
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Họ và tên" id="nameContact" name="nameContact" required/="">
+                                            <span><i class="fa fa-user"></i></span>
+                                    </div>
+                                </div><!-- end columns -->
+
+
+
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="emailContact"  id="emailContact" placeholder="Email" required/="">
+                                            <span><i class="fa fa-envelope"></i></span>
+                                    </div>
+                                </div><!-- end columns -->
+
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="phoneNumberContact" id="phoneNumberContact"  placeholder="SĐT" required/=""> <span><i
+                                            class="fa fa-phone"></i></span>
+                                    </div>
+                                </div><!-- end columns -->
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="note" id="note" rows="5"
+                                            placeholder="Yêu cầu đặc biệt"></textarea>
+                                    </div>
+                                </div><!-- end columns -->
+
+                                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-5">
+                                    <div class="form-group">
+                                        <span><i class="fa fa-calendar-check-o"></i></span>
+                                        <select class="form-control" name="timeArrival" id="timeArrival" required/=""> <option
+                                            selected="" value="12:00">Thời gian đến dự kiến</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="16:00">16:00</option>
+                                        </select>
+                                    </div>
+                                </div><!-- end columns -->
+
+
+                                <div class="col-xs-12 col-sm-4 col-md-12 col-lg-5">
+                                    <div class="form-group">
+                                        <input type="text" id="discount" name="discount" class="form-control" placeholder="Mã khuyến mại">
+                                        <span><i class="fa fa-bookmark"></i></span>
+                                    </div>
+
+                                </div><!-- end columns -->
+                                <div class="col-xs-12 col-sm-2 col-md-12 col-lg-2">
+                                    <a class="btn btn-discount" id="btnApplyDiscount">Áp dụng</a>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-12 col-lg-7 pull-right">
+                                    <p class="text-red hidden" id="lblNotExitsDiscount">Mã khuyến mại không tồn tại !</p>
+                                </div>
+
+                                <input type="text" class="hidden" name="dayCheckin" id="dayCheckin" value="{{ roomDetail.dayCheckin}}">
+                                <input type="text" class="hidden" name="dayCheckout" id="dayCheckout" value="{{ roomDetail.dayCheckout}}">
+                                <input type="text" class="hidden" name="roomType" id="roomType" value="{{roomDetail.roomType}}">
+                                <input type="text" class="hidden" name="adult" value="{{ roomDetail.adult}}">
+                                <input type="text" class="hidden" name="child" value="{{ roomDetail.child}}">
+                                <input type="text" class="hidden" name="dayBooking" value="{{ roomDetail.dayBooking}}">
+                                <input type="text" class="hidden" name="deposited" value="0">
+                                <input type="text" class="hidden" name="idRoom" id="idRoom" value="{{roomDetail.idRoom}}">
+                                <input type="text" class="hidden" name="bookingCode" id="bookingCode" value="{{roomDetail.bookingCode}}">
+                                <input type="text" class="hidden" name="dayCheckinDisplay" id="dayCheckinDisplay" value="{{roomDetail.dayCheckinDisplay}}">
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <a  class="btn btn-yellow" id="btnBookRoomNow">Đặt ngay <i
+                                            class="fa fa-angle-double-right"></i></a>
+                                </div><!-- end columns -->
+
+                            </div><!-- end row -->
+                        </form>
+                    </div><!-- end space-right -->
+                </div><!-- end columns -->
+
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 side-bar">
+                    <div class="selected-room-block">
+                        <div class="selected-room-img">
+                            <img src="/assets/pluginsClient/images/selected-room.jpeg" class="img-responsive"
+                                alt="selected-room">
+                        </div><!-- end selected-room-img -->
+
+                        <div class="selected-room-detail">
+                            <h2>{{roomDetail.roomType}}</h2>
+                            <div class="rating">
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                            </div><!-- end rating -->
+
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                <span class="pull-right">{{roomDetail.dayCheckinDisplay}}</span>
+                                <span class="pull-left text-bold">Ngày nhận phòng:</span>
+                            </p>
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                <span class="pull-right">{{roomDetail.dayCheckoutDisplay}}</span>
+                                <span class="pull-left text-bold">Ngày trả phòng:</span>
+                            </p>
+
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                <span class="pull-right">{{roomDetail.priceTotalVND}}</span>
+                                <span class="pull-left text-bold">Giá thuê {{roomDetail.numDay}} ngày:</span>
+                            </p>
+
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0 hidden" id="hideDiscount">
+                                <span class="pull-right" id="lblPriceDiscount"></span>
+                                <span class="pull-left text-bold">Giảm KM <span id="lblValueDiscount"></span>%:</span>
+                            </p>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                <hr>
+                            </div>
+
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                <span class="pull-right" style="font-size: 24px ;color:black;" id="lblTotalPriceDisplay">{{roomDetail.priceTotalVND}}</span>
+                                <span class="pull-left text-bold" style="font-size: 24px; color: black;">Tổng
+                                    tiền:</span>
+                            </p>
+                            <input type="text" class="hidden" id='priceTotal' value='{{roomDetail.priceTotal}}'>
+                            <input type="text" class="hidden" id='valueDiscount' >
+
+                        </div><!-- end selected-room-detail -->
+                    </div><!-- end selected-room-block -->
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end reservation -->
+
+
+
+</section><!-- end innerpage-wrapper -->
+
+
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/client/bookroom.js"></script>
+{% endblock %}

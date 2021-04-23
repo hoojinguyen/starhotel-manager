@@ -1,0 +1,60 @@
+<!-- Modal Thêm mới phòng, chỉnh sửa phòng  -->
+<div class="modal fade" id="modal-addRoom-updateRoom">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Thông Tin Phòng</h4>
+			</div>
+			<div class="modal-body">
+				
+				<form id="roomInfo" method="POST">
+					<input type="hidden" id="idRoom" name="idRoom" value="">
+					<div class="form-group">
+						<label for="nameRoom">Tên phòng: </label>
+						<input type="text" class="form-control" id="nameRoom" name="nameRoom" placeholder="">
+					</div>
+					<div class="form-group">
+						<label for="roomType">Loại phòng: </label>
+						<select name="roomType" id="roomType" class="form-control">
+							{% for roomType in roomTypes %}
+							{% if roomType.active == "1" %}
+							<option value='{{ roomType.id }}'>{{ roomType.name }}</option>
+							{% endif %}
+							{% endfor %}
+						</select>
+						{% for room in rooms %}
+						{% endfor %}
+					</div>
+					<div class="form-group">
+						<label for="floor">Tầng: </label>
+						<select name="floor" id="floor" class="form-control">
+							{% for floor in floors %}
+							{% if floor.active == "1" %}
+							<option value='{{ floor.id }}'>{{ floor.name }}</option>
+							{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="statusRoom">Tình trạng: </label>
+						<select name="statusRoom" id="statusRoom" class="form-control">
+							<option value="1">Còn trống</option>
+							<option value="0">Đang sửa chữa</option>
+						</select>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+
+				<label id="resultRoom" class="pull-left text-red hidden"></label>
+				<button type="button" class="btn btn-default m-r-10" data-dismiss="modal">Đóng</button>
+				<button  id="add-or-update-room"" class="btn btn-primary">Lưu</button>
+			</div>
+			
+			<div class="overlay">
+				<i class="fa fa-spinner fa-spin fa-3x fa-fw fa-refreshcenter"></i>
+			</div>
+		</div>
+	</div>
+</div>

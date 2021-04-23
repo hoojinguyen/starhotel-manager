@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Coming Soon</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+        
+        <!--Font Stylesheet-->
+        <link href="https://fonts.googleapis.com/css?family=Cookie|Lato:400,400i,700,700i,900,900i" rel="stylesheet">  
+        
+        <!-- Bootstrap Stylesheet -->	
+        <link rel="stylesheet" href="/assets/pluginsClient/css/bootstrap.min.css">
+        
+        <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="/assets/pluginsClient/css/font-awesome.min.css">
+        
+        <!-- Bootstrap Stylesheet -->	
+        <link rel="stylesheet" href="/assets/pluginsClient/css/style.css">
+        <link rel="stylesheet" id="cpswitch" href="/assets/pluginsClient/css/yellow.css">
+        <link rel="stylesheet" href="/assets/pluginsClient/css/responsive.css">
+        
+        <!-- Color Panel -->
+        <link rel="stylesheet" href="/assets/pluginsClient/css/jquery.colorpanel.css">
+    </head>
+    
+    <body>
+    	
+        <!--====== LOADER =====-->
+        <div class="loader"></div>
+    
+        <input type="text" class="hidden" id="emailContact" name="emailContact" value="{{ roomDetail.emailContact}}">
+        <!--= COMING SOON =-->
+    	<div id="coming-soon">
+    		<div class="container coming-soon-text">
+            	<h1><span>Star</span> Hotel</h1>
+                <h3>Đặt phòng thành công</h3>
+             
+                <p>Mã đặt phòng của bạn là: <span class="text-red">{{roomDetail.bookingCode}}</span> <p>
+                <p>Vui lòng đến nhận phòng vào lúc: <span> {{roomDetail.timeArrival}} </span> ngày <span> {{roomDetail.dayCheckin}}</span> </p>
+                <p>Nếu muốn hủy phòng, vui lòng truy cập vào <a style="color:#FFCB05;" href="policy">Chính sách hủy phòng</a> để biết thêm thông tin chi tiết.</p>
+                <p>Mọi thắc mắc, xin liên hệ:</p>
+                <div>
+                    <br>
+                </div>
+
+                <ul class="coming-soon-links list-inline list-unstyled">
+                    <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                    <li><a href="#"><span><i class="fa fa-google"></i></span></a></li>
+                    <li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+                    <li><a href="#"><span><i class="fa fa-phone"></i></span></a></li>
+                </ul>
+               <div>
+                   <br>
+                   <br>
+
+               </div>
+
+               <a href="homepage" class="btn btn-lg btn-yellow">Trở về trang chủ <i class="fa fa-angle-double-right"></i></a>
+            </div><!-- end coming-soon-text -->
+        </div><!-- end coming-soon -->
+    
+
+    	<!-- Page Scripts Starts -->
+        <script src="/assets/pluginsClient/js/jquery.min.js"></script>
+        <script src="/assets/pluginsClient/js/jquery.colorpanel.js"></script>
+        <script src="/assets/pluginsClient/js/bootstrap.min.js"></script>
+        <script src="/assets/pluginsClient/js/custom-navigation.js"></script>
+
+        <script src="/assets/js/client/finish.js"></script>
+        <!-- Page Scripts Ends -->
+    
+    </body>
+</html>

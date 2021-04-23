@@ -1,0 +1,27 @@
+<script id="customerRowTemplate" type="text/html">
+    <tr>
+        <td>[customer_name]</td>
+        <td>[customer_code]</td>
+        <td>[customer_active]</td>
+        
+        <td class="text-center">
+            <button class=" edit-customer 
+                        btn 
+                        btn-warning 
+                        btn-sm" data-toggle="modal" data-target="#modal-add" data-customer-id="[customer_id]"
+                title="Sửa thông tin khánh hàng">
+                <span class="fa fa-wrench"></span>
+                Sửa</button>
+            <button class=" btn
+                        btn-danger 
+                        btn-sm 
+                        btn-danger 
+                        delete-customer 
+                        m-l-20" data-toggle="modal" data-target="#modal-del" data-customer-id="[customer_id]"
+                title="Xóa thông tin khánh hàng">
+                <span class="fa fa-trash-o"></span>
+                Xóa</button>
+            </button>
+        </td>
+    </tr>
+    </script>

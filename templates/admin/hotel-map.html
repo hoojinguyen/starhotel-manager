@@ -1,0 +1,49 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+<div class="row" style="margin-top:8%; margin-left: 12%;">
+    <div class="col-sm-10">
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+                <table class="table table-bordered"> 
+                    <tbody class="text-center" style="font-size: 20px;">
+                            {% for floor in floors %}
+                        <tr>    
+                            <td class="text-uppercase"> {{floor.name}}</td>
+                            {% for room in rooms %}
+                            {% if (room.floorId == floor.id)%}
+                            {% for roomType in roomTypes %}
+                            {% if (room.roomTypeId == roomType.id and roomType.name == "Phòng đơn")%}
+                            <td><a><span class="badge bg-yellow-gradient">{{ room.nameRoom}}</span></a></td>
+                            {% endif %}
+                            {% if (room.roomTypeId == roomType.id and roomType.name == "Phòng đôi")%}
+                            <td><a><span class="badge bg-red-gradient">{{ room.nameRoom}}</span></a></td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12" style="padding-left: 70%;">
+            <small class="label label-warning"><i class="fa fa-bed"></i>  Phòng đơn</small>
+            <small class="label label-danger"><i class="fa fa-bed"></i> <i class="fa fa-bed"></i> Phòng đôi</small>
+    </div>
+</div>
+
+
+{% endblock %}

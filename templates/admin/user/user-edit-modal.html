@@ -1,0 +1,48 @@
+<div class="pop-up">
+	<div class="box-body">
+		<div class="modal fade" id="user-edit-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Thông tin tài khoản</h4>
+					</div>
+					<div class="modal-body">
+						<form id="userInfo" method="POST">
+
+							<input type="hidden" id="action" name="action" value="add">
+							<input type="hidden" id="userId" name="userId" value="">
+							<div class="box-body">
+								<div class="form-group">
+									<label for="username">Tài khoản</label>
+									<input type="text" class="form-control" id="username" name="username"
+										placeholder="Nhập tài khoản">
+								</div>
+								<div class="form-row">
+									<label for="password">Mật khẩu</label>
+									<div class="input-group pass_show">
+										<input type="text" class="form-control" id="password" name="password"
+											placeholder="Nhập mật khẩu">
+										<div class="input-group-btn">
+											<button id="generatePassword" type="button" class="btn btn-info">Tạo
+												mật khẩu</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<label id="userFormResult"></label>
+						<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
+						<button name="ok" id="saveUser" class="btn btn-primary">Lưu</button>
+					</div>
+				</div>
+				<div class="overlay">
+					<i class="fa fa-refresh fa-spin fa-refreshcenter"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,122 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="box">
+			<div class="box-header"></div>
+			<div class="box-body">
+				<div class="row m-b-10">
+					<div class="col-sm-6 text-left">
+						<label class="display-inline-block text-left">Tìm kiếm:
+							<input type="text" class="form-control input-sm display-inline-block width-auto search"
+								id="searchBy" name="searchBy">
+						</label>
+					</div>
+					<div class="col-sm-6 text-right">
+						<button type="button" class="btn btn-sm btn-primary add-guest" id="btnAddGuest" data-toggle="modal"
+							data-target="#modal-add-update">Thêm Khách Hàng</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 table-responsive">
+						<table class="table table-bordered table-hover table-striped" id="guests">
+							<thead>
+								<tr id="list-header">
+									<input type="hidden" id="currentSortBy" name="currentSortBy" value="id">
+									<input type="hidden" id="currentSortDir" name="currentSortDir" value="1">
+									<!-- <th scope="col">Mã KH
+										<span class="fa fa-long-arrow-down sort-desc" data-sortby="id"
+											data-sortdir="2"></span>
+										<span class="fa fa-long-arrow-up sort-asc" data-sortby="id"
+											data-sortdir="1"></span>
+									</th> -->
+									<th scope="col">Họ tên <span class="fa fa-long-arrow-down sort-desc"
+											data-sortby="name" data-sortdir="2"></span><span
+											class="fa fa-long-arrow-up sort-asc" data-sortby="name"
+											data-sortdir="1"></span></th>
+									<th scope="col">CMND <span class="fa fa-long-arrow-down sort-desc"
+											data-sortby="idCardNo" data-sortdir="2"></span><span
+											class="fa fa-long-arrow-up sort-asc" data-sortby="idCardNo"
+											data-sortdir="1">
+									</th>
+									<th scope="col">SĐT <span class="fa fa-long-arrow-down sort-desc"
+											data-sortby="phoneNumber" data-sortdir="2"></span><span
+											class="fa fa-long-arrow-up sort-asc" data-sortby="phoneNumber"
+											data-sortdir="1"></span></th>
+									<th scope="col">Năm sinh <span class="fa fa-long-arrow-down sort-desc"
+											data-sortby="yearOfBirth" data-sortdir="2"></span><span
+											class="fa fa-long-arrow-up sort-asc" data-sortby="yearOfBirth"
+											data-sortdir="1"></span></th>
+											<th scope="col">Địa chỉ</th>
+									<th scope="col"></th>
+									
+								</tr>
+							</thead>
+							<tbody id="guestsBody">
+								{% for guest in guests %}
+								<tr>
+									<!-- <td id="guestId">{{ guest.id }}</td> -->
+									<td>{{ guest.name }}</td>
+									<td>{{ guest.idCardNo }}</td>
+									<td>{{ guest.phoneNumber }}</td>
+									<td>{{ guest.yearOfBirth }}</td>
+									<td>{{ guest.address }}</td>
+									<td class="text-center">
+										<button class="btn btn-warning  btn-xs edit-guest"
+											data-toggle="modal" data-target="#modal-add-update"
+											data-guest-id="{{ guest.id }}"  title="Sửa thông tin khánh hàng" ><span class="fa fa-wrench"></span></button>
+										<button class="btn btn-danger  btn-xs delete-guest"
+											data-toggle="modal" data-target="#modal-del"
+											data-guest-id="{{ guest.id }}"  title="Xóa thông tin khánh hàng"><span class="fa fa-trash-o"></span></button>
+									</td>
+									{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					
+					<div class="col-sm-4">
+						<p class="show">Hiển thị <span class="paging">{{ currentPageRecords }}</span> 
+							trên <span class="sum-paging">
+								{{ counts }}</span> kết quả</p>
+					</div>
+				
+					<div class="col-sm-4 text-center">
+						<span>Hiển thị </span>
+						<select name="entries" id="entries" class="entries">
+							<option value="10">10</option>
+							<option value="20">20</option>
+							<option value="30">30</option>
+							<option value="50">50</option>
+						</select>
+						<span> kết quả</span>
+					</div>
+					<div >
+						{% include 'admin/pagination.html' ignore missing %}
+					</div>
+				</div>
+			</div>
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include 'admin/guest/guest-edit-modal.html' %}
+{% include 'admin/guest/guest-delete-modal.html' %}
+{% include 'admin/guest/guest-row-template.html' ignore missing %}
+{% endblock %}
+
+
+{% block pageJavascript %}
+<script src="/assets/js/admin/guest.js"></script>
+{% endblock %}

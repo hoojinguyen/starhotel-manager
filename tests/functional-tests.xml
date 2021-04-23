@@ -1,0 +1,12 @@
+<phpunit colors="true">
+    <php>
+        <env name="enviroment" value="test"/>
+    </php>
+    <testsuites>
+        <testsuite>
+            <directory>Functional</directory>
+            <!-- <directory>othermodule/tests/unit</directory> -->
+        </testsuite>
+    </testsuites>
+    <!-- ... -->
+</phpunit>

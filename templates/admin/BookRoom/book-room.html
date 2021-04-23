@@ -1,0 +1,287 @@
+{% extends "/admin/page.html" %} {% block pageHeader %} {{ pageHeader }} {% endblock %} {% block pageDescription %}
+{{ pageDescription }} {% endblock %} {% block content %}
+
+<section class="invoice">
+	<div class="alert alert-success hide" role="alert" id="bookRoomSucces">
+		<h4 class="alert-heading">Đặt phòng thành công !</h4>
+
+		<div class="box-group">
+			<p class="inline">Bạn có muốn chuyển tới trang nhận phòng ngay bây giờ ?</p>
+			<button class="btn btn-xs btn-primary" id="btnRedirectCheckInPage">Có</button>
+			<button class="btn btn-xs btn-default" id="btnNoRedirectCheckin">Không</button>
+		</div>
+
+
+	</div>
+	<div class="alert alert-danger hide" role="alert" id="bookRoomFail">
+		<h4 class="alert-heading">Đặt phòng không thành công !</h4>
+		<p class="inline">Vui lòng kiểm tra lại thông tin đặt phòng !</p>
+
+	</div>
+	<form id="findAndBookRoom" method="POST">
+
+		<!-- info row -->
+		<div class="row invoice-info">
+			<!-- Thông tin liên hệ -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 invoice-col">
+				<h3 class="box-title font-light m-l-10">Thông tin chung:</h3>
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="bookingCode">Mã đặt phòng:</label>
+						<div class="input-group col-xs-9">
+							<input type="text" class="form-control pull-right text-bold" id="bookingCode"
+								name="bookingCode" value="{{bookingCode}}" readonly>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="createdBy">Người đặt phòng:</label>
+						<div class="input-group col-xs-9">
+							<input type="text" class="form-control pull-right" id="createdBy" name="createdBy"
+								value="Admin" readonly>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="dayBooking">Ngày đặt phòng:</label>
+						<div class="input-group col-xs-9">
+							<input type="text" class="form-control pull-right" id="dayBooking" name="dayBooking" value="{{ dayBooking }}" readonly>
+						</div>
+					</div>
+				</div>
+
+
+
+				<h3 class="box-title font-light m-l-10">Thông tin liên hệ:</h3>
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="nameContact"><span id="required">*</span>Tên khách
+							hàng:</label>
+						<div class="input-group col-xs-9">
+							<input type="text" class="form-control pull-right" id="nameContact" name="nameContact">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="phoneNumberContact"><span id="required">*</span>SĐT:</label>
+						<div class="input-group col-xs-9">
+							<input type="text" class="form-control pull-right" id="phoneNumberContact"
+								name="phoneNumberContact">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="emailContact"> <span id="required">*</span>Email:</label>
+						<div class="input-group col-xs-9">
+							<input type="email" class="form-control pull-right" id="emailContact" name="emailContact">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="col-xs-3 m-t-5" for="note">Ghi chú:</label>
+						<div class="input-group col-xs-9">
+							<textarea class="form-control" rows="4" id="note" name="note"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- /.col -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 invoice-col">
+
+				<!-- Thông tin phòng -->
+
+				<h3 class="box-title font-light m-l-40">Thông tin yêu cầu:</h3>
+				<div class="col-xs-12">
+					<div class="col-xs-6">
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="adult">Số người lớn:</label>
+								<div class="input-group col-xs-6">
+									<input type="number" min="0" class="form-control pull-right" id="adult"
+										name="adult">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="child">Số trẻ em:</label>
+								<div class="input-group col-xs-6">
+									<input type="number" min="0" class="form-control pull-right" id="child"
+										name="child">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="timeArrival">Giờ nhận phòng:</label>
+								<div class="input-group col-xs-6">
+										<select class="form-control" name="timeArrival" id="timeArrival" required/=""> <option
+											selected="" value="08:00">08:00</option>
+											<option value="10:00">10:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="16:00">16:00</option>
+                                        </select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="discount">Mã khuyến mại:</label>
+								<div class="input-group col-xs-6">
+									<input type="text" class="form-control pull-right" id="discount" name="discount">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="deposited">Tiền trả trước:</label>
+								<div class="input-group col-xs-6">
+									<input type="number" min="0" class="form-control pull-right" id="deposited"
+										name="deposited">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<div class="input-group col-xs-6">
+									<input type="hidden" id="idRoom" name="idRoom">
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<div class="col-xs-6">
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="dayCheckin"><span id="required">*</span>Ngày
+									nhận phòng:</label>
+								<div class="input-group col-xs-6">
+									<input type="text" class="form-control pull-right dpd1" id="dayCheckin"
+										name="dayCheckin">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="dayCheckout"><span id="required">*</span>Ngày
+									trả phòng:</label>
+								<div class="input-group col-xs-6">
+									<input type="text" class="form-control pull-right dpd2" id="dayCheckout"
+										name="dayCheckout">
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="roomType">Loại phòng:</label>
+								<div class="input-group col-xs-6">
+									<select class="form-control" name="roomType" id="roomType" name="roomType">
+										<option value="0">-- Tất cả ---</option>
+										{% for roomType in roomTypes %}
+										{% if roomType.active == "1" %}
+										<option value='{{ roomType.id }}'>{{ roomType.name }}</option>
+										{% endif %}
+										{% endfor %}
+
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<label class="col-xs-6 m-t-5" for="nameRoom"><span id="required">*</span>Phòng:</label>
+								<div class="input-group col-xs-6">
+									<input type="text" class="form-control pull-right" id="nameRoom" name="nameRoom"
+										readonly>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-xs-12">
+								<div class="input-group pull-right">
+									<button type="button" class="btn btn-block btn-default" id="btnFindRoomEmpty"
+										data-toggle="modal" data-target="#modal-findEmptyRoom"><i
+											class="fa fa-search"></i> Tìm phòng trống</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="col-xs-12 table-responsive">
+					<table class="table table-hover" id="tableDayRate">
+
+						<thead>
+							<tr>
+								<th>Ngày</th>
+								<th>Phí</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="7" class="text-center">
+									<p id="noData"> Chưa có dữ liệu ... </p>
+									<div class="overlay hide">
+										<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+									</div>
+								</td>
+
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+			<!-- /.col -->
+
+		</div>
+
+		<!-- /.row -->
+		<div class="row">
+			<div class="col-xs-12">
+				<button type="button" class="btn btn-success pull-right m-r-10" id="btnBookRoom">
+					Đặt phòng <em class="fa fa-spinner fa-spin fa-fw hide" id="refreshButtonBookRoom"></em>
+				</button>
+				<button type="button" class="btn btn-danger pull-right m-r-10" id="btnCancelBookRoom"> Hủy
+				</button>
+			</div>
+		</div>
+	</form>
+</section>
+
+
+<section class="pop-up">
+	{% include 'admin/BookRoom/list-empty-room.html' %}
+</section>
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/pluginsClient/js/bootstrap-datepicker.js"></script>
+<script src="/assets/pluginsClient/js/custom-date-picker.js"></script>
+<script src="/assets/js/BookRoom/bookroom.js"></script>
+{% endblock %}

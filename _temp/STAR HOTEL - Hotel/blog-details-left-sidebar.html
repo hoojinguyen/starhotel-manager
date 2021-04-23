@@ -1,0 +1,651 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <title>Blog Details Left Sidebar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+        
+        <!-- Google Fonts -->	
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CPlayfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+        
+        <!-- Bootstrap Stylesheet -->	
+        <link rel="stylesheet" href="css\bootstrap.min.css">
+        
+        <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="css\font-awesome.min.css">
+            
+        <!-- Custom Stylesheets -->	
+        <link rel="stylesheet" href="css\style.css">
+        <link rel="stylesheet" id="cpswitch" href="css\yellow.css">
+        <link rel="stylesheet" href="css\responsive.css">
+        
+        <!-- Color Panel -->
+        <link rel="stylesheet" href="css\jquery.colorpanel.css">
+    </head>
+    
+    
+    <body>
+        
+        <!--====== LOADER =====-->
+        <div class="loader"></div>
+        
+        
+        <!--========== COLOR-PANEL ==========-->
+        <div id="colorPanel" class="colorPanel">
+            <a id="cpToggle" href="#"></a>
+            <ul></ul>
+        </div><!-- end colorPanel -->
+        
+        
+        <!--========== TOP-BAR ==========-->
+        <div id="top-bar">
+            <div class="container">
+                <div class="row">          
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                        <div id="info">
+                            <ul class="list-unstyled list-inline">
+                                <li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
+                                <li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
+                            </ul>
+                        </div><!-- end info -->
+                    </div><!-- end columns -->
+                    
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div id="links">
+                            <ul class="list-unstyled list-inline">
+                                <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                                <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                                <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                                <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+                                <li>
+                                    <form>
+                                        <div class="form-group">
+                                            <span><i class="fa fa-angle-down"></i></span>
+                                            <select class="form-control">
+                                                <option value="">EN</option>
+                                                <option value="">UR</option>
+                                                <option value="">FR</option>
+                                                <option value="">IT</option>
+                                            </select>
+                                        </div><!-- end form-group -->
+                                    </form>
+                                </li>
+                            </ul>
+                        </div><!-- end links -->
+                    </div><!-- end columns -->				
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end top-bar -->
+        
+        
+        <!--=========================== NAVBAR ===============================-->
+        <nav class="navbar navbar-default black-nav navbar-custom black-menu" id="mynavbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>                        
+                    </button>
+                    <a href="#" class="navbar-brand"><span>STAR</span>HOTEL</a>
+                </div><!-- end navbar-header -->
+                
+                <div class="collapse navbar-collapse" id="myNavbar1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Homepage 1</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="homepage-1-slider.html">Slider Version</a></li>
+                                        <li><a href="homepage-1-image-back.html">Image Version</a></li>
+                                        <li><a href="homepage-1-video-back.html">Video Version</a></li>
+                                        <li><a href="homepage-1-landing.html">Landing Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Homepage 2</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="homepage-2-slider.html">Slider Version</a></li>
+                                        <li><a href="homepage-2-image-back.html">Image Version</a></li>
+                                        <li><a href="homepage-2-video-back.html">Video Version</a></li>
+                                        <li><a href="homepage-2-landing.html">Landing Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Homepage 3</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="homepage-3-slider.html">Slider Version</a></li>
+                                        <li><a href="homepage-3-image-back.html">Image Version</a></li>
+                                        <li><a href="homepage-3-video-back.html">Video Version</a></li>
+                                        <li><a href="homepage-3-landing.html">Landing Page</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="homepage-restaurant.html">Restaurant Homepage</a></li>
+                            </ul>	
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Rooms<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="room-listings.html">List View Full Width</a></li>
+                                <li><a href="room-listings-left-sidebar.html">List View Left Sidebar</a></li>
+                                <li><a href="room-listings-right-sidebar.html">List View Right Sidebar</a></li>
+                                <li><a href="room-grid.html">Grid View Full Width</a></li>
+                                <li><a href="room-grid-left-sidebar.html">Grid View Left Sidebar</a></li>
+                                <li><a href="room-grid-right-sidebar.html">Grid View Right Sidebar</a></li>
+                                <li><a href="room-details-left-sidebar.html">Room Details Left Sidebar</a></li>
+                                <li><a href="room-details-right-sidebar.html">Room Details Right Sidebar</a></li>
+                            </ul>			
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dining<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="dining-1.html">Dining-1</a></li>
+                                <li><a href="dining-2.html">Dining-2</a></li>
+                            </ul>			
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Header</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="feature-header-1.html">Header Style 1</a></li>
+                                        <li><a href="feature-header-2.html">Header Style 2</a></li>
+                                        <li><a href="feature-header-3.html">Header Style 3</a></li>
+                                        <li><a href="feature-header-4.html">Header Style 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Page Title</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="feature-page-cover-1.html">Page Title Style 1</a></li>
+                                        <li><a href="feature-page-cover-2.html">Page Title Style 2</a></li>
+                                        <li><a href="feature-page-cover-3.html">Page Title Style 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Footer</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="feature-footer-1.html">Footer Style 1</a></li>
+                                        <li><a href="feature-footer-2.html">Footer Style 2</a></li>
+                                        <li><a href="feature-footer-3.html">Footer Style 3</a></li>
+                                        <li><a href="feature-footer-4.html">Footer Style 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms</a>
+                                    <ul class="dropdown-menu dropdown-sbm right-sbm">
+                                        <li><a href="login-1.html">Login 1</a></li>
+                                        <li><a href="login-2.html">Login 2</a></li>
+                                        <li><a href="registration-1.html">Registration 1</a></li>
+                                        <li><a href="registration-2.html">Registration 2</a></li>
+                                        <li><a href="forgot-password-1.html">Forgot Password 1</a></li>
+                                        <li><a href="forgot-password-2.html">Forgot Password 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>	
+                        </li>
+                        <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li class="dropdown-header">Standard Pages</li>
+                                                <li><a href="about-1.html">About-1</a></li>
+                                                <li><a href="about-2.html">About-2</a></li>
+                                                <li><a href="services-1.html">Services-1</a></li>
+                                                <li><a href="services-2.html">Services-2</a></li>
+                                                <li><a href="event-listings.html">Event Listing</a></li>
+                                                <li><a href="event-details.html">Event Details</a></li>
+                                                <li><a href="blog-listings-left-sidebar.html">Blog Left Sidebar</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="col-sm-4 col-md-3">
+                                            <ul class="list-unstyled">	
+                                                <li><a href="blog-listings-right-sidebar.html">Blog Right Sidebar</a></li>
+                                                <li class="active"><a href="#">Blog Detail Left Sidebar</a></li>
+                                                <li><a href="blog-details-right-sidebar.html">Blog Detail Right Sidebar</a></li>
+                                                <li><a href="gallery-2-columns.html">2 Columns Gallery</a></li>
+                                                <li><a href="gallery-3-columns.html">3 Columns Gallery</a></li>
+                                                <li><a href="gallery-4-columns.html">4 Columns Gallery</a></li>
+                                                <li><a href="gallery-masonry.html">Masonry Gallery</a></li>
+                                                <li><a href="spa-page.html">Spa</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="col-sm-4 col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="team-1.html">Team-1</a></li>
+                                                <li><a href="team-2.html">Team-2</a></li>
+                                                <li><a href="offers.html">Offers</a></li>
+                                                <li><a href="testimonials-1.html">Testimonials-1</a></li>
+                                                <li><a href="testimonials-2.html">Testimonials-2</a></li>
+                                                <li><a href="testimonials-3.html">Testimonials-3</a></li>
+                                                <li><a href="pricing-1.html">Pricing-1</a></li>
+                                                <li><a href="pricing-2.html">Pricing-2</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="col-sm-4 col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="reservation-left-sidebar.html">Reservation-Left-Sidebar</a></li>
+                                                <li><a href="reservation-right-sidebar.html">Reservation-Right-Sidebar</a></li>
+                                                <li class="dropdown-header header-2">Special Pages</li>
+                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                <li><a href="error-page.html">404 Page</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>			
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact<span><i class="fa fa-angle-down"></i></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="contact-1.html">Contact-1</a></li>
+                                <li><a href="contact-2.html">Contact-2</a></li>
+                            </ul>			
+                        </li>
+                        <li><a href="reservation-right-sidebar.html">Book Now</a></li>
+                    </ul>
+                </div><!-- end navbar collapse -->
+            </div><!-- end container -->
+        </nav><!-- end navbar -->
+        
+        
+        <!--============= PAGE-COVER =============-->
+        <section class="page-cover" id="blog-details-cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                    	<h1 class="page-title">Blog Detail Page</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Blog Detail Left Sidebar</li>
+                        </ul>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end page-cover -->
+        
+        
+        <!--=============INNERPAGE-WRAPPER ===========-->
+        <section id="blog-details-page" class="innerpage-wrapper">
+        
+        	<div id="blog-details" class="innerpage-section-padding">
+        		<div class="container">
+        			<div class="row">
+                    	
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 side-bar blog-sidebar left-side-bar">
+                        
+                        	<div class="side-bar-block search">
+                            	<form>
+                                	<div class="form-group">
+                                    	<input type="text" class="form-control" placeholder="Search">
+                                        <a href="#" class="btn"><span><i class="fa fa-search"></i></span></a>
+                                    </div>
+                                </form>
+                            </div><!-- end side-bar-block -->
+                            
+                            <div class="side-bar-block about-block">
+                                <h2 class="side-bar-heading">About Star Hotel</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div><!-- end side-bar-block -->
+                            
+                            <div class="row">
+                            	<div class="col-xs-12 col-sm-6 col-md-12">
+                                    <div class="side-bar-block instagram">
+                                        <h2 class="side-bar-heading">Instagram</h2>
+                                        <ul class="list-unstyled list-inline">
+                                            <li><img src="images\insta-1.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-2.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-3.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-4.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-5.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-6.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-7.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-8.jpeg" class="img-responsive" alt="insta-img"></li>
+                                            <li><img src="images\insta-9.jpeg" class="img-responsive" alt="insta-img"></li>
+                                        </ul>
+                                    </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->                             
+                                
+                                <div class="col-xs-12 col-sm-6 col-md-12">
+                                    <div class="side-bar-block contact">
+                                        <h2 class="side-bar-heading">Contact Us</h2>
+                                        <div class="c-list">
+                                            <div class="icon"><span><i class="fa fa-envelope"></i></span></div>
+                                            <div class="text"><p>support@star-hotel.com</p></div>
+                                        </div><!-- end c-list -->
+                                        
+                                        <div class="c-list">
+                                            <div class="icon"><span><i class="fa fa-phone"></i></span></div>
+                                            <div class="text phone"><p>+222 – 5548 656</p></div>
+                                        </div><!-- end c-list -->
+                                        
+                                        <div class="c-list">
+                                            <div class="icon"><span><i class="fa fa-map-marker"></i></span></div>
+                                            <div class="text"><p>Street No: 1234/A, Blu Vard Area, Main Double Road, UK</p></div>
+                                        </div><!-- end c-list -->
+                                    </div><!-- end side-bar-block -->
+                                </div><!-- end columns -->
+                            </div><!-- end row -->
+                            
+                            <div class="side-bar-block recent-post">
+                                <h2 class="side-bar-heading">Recent Post</h2>
+                                <div class="row">
+                                
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="recent-block">
+                                            <div class="recent-img">
+                                                <img src="images\recent-post-1.jpeg" class="img-reponsive" alt="recent-blog-image">
+                                            </div><!-- end recent-img -->
+                                            
+                                            <div class="recent-text">
+                                                <a href="blog-details.html"><h5>Host a Family  Party</h5></a>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                                <span class="date">27 May, 2017</span>
+                                            </div><!-- end recent-text -->
+                                        </div><!-- end recent-block -->
+                                    </div><!-- end columns -->
+                                    
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="recent-block">
+                                            <div class="recent-img">
+                                                <img src="images\recent-post-2.jpeg" class="img-reponsive" alt="recent-blog-image">
+                                            </div><!-- end recent-img -->
+                                            
+                                            <div class="recent-text">
+                                                <a href="blog-details.html"><h5>Restaurant</h5></a>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                                <span class="date">27 May, 2017</span>
+                                            </div><!-- end recent-text -->
+                                        </div><!-- end recent-block -->
+                                    </div><!-- end columns -->
+                                    
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="recent-block">
+                                            <div class="recent-img">
+                                                <img src="images\recent-post-3.jpeg" class="img-reponsive" alt="recent-blog-image">
+                                            </div><!-- end recent-img -->
+                                            
+                                            <div class="recent-text">
+                                                <a href="blog-details.html"><h5>Music  Party</h5></a>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                                <span class="date">27 May, 2017</span>
+                                            </div><!-- end recent-text -->
+                                        </div><!-- end recent-block -->
+                                    </div><!-- end columns -->
+                                    
+                                </div><!-- end row -->
+                            </div><!-- end side-bar-block -->
+                            
+                            <div class="side-bar-block categories">
+                            	<h2 class="side-bar-heading">Categories</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Design<span class="number">(05)</span></a></li>
+                                    <li><a href="#">Accomodation<span class="number">(03)</span></a></li>
+                                    <li><a href="#">Pool<span class="number">(01)</span></a></li>
+                                    <li><a href="#">Services<span class="number">(02)</span></a></li>
+                                    <li><a href="#">SPA<span class="number">(08)</span></a></li>
+                                    <li><a href="#">Design<span class="number">(10)</span></a></li>
+                                    <li><a href="#">Workout<span class="number">(03)</span></a></li>
+                                </ul>
+                            </div><!-- end side-bar-block -->
+
+							<div class="row">
+                            
+                            	<div class="col-xs-12 col-sm-6 col-md-12">
+                                    <div class="side-bar-block follow-us">
+                                        <h2 class="side-bar-heading">Follow Us</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                                        <ul class="list-unstyled list-inline">
+                                            <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                                            <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+                                        </ul>
+                                    </div><!-- end side-bar-block -->
+								</div><!-- end columns -->
+                                
+								<div class="col-xs-12 col-sm-6 col-md-12">
+                                    <div class="side-bar-block tags">
+                                        <h2 class="side-bar-heading">Tags</h2>
+                                        <ul class="list-unstyled list-inline">
+                                            <li><a href="#" class="btn btn-g-border">SPA</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Restaurant</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Searvices</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Wifi</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Tv</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Rooms</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Pools</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Work</a></li>
+                                            <li><a href="#" class="btn btn-g-border">Sports</a></li>
+                                        </ul>
+                                    </div><!-- end side-bar-block -->
+								</div><!-- end columns -->
+                                
+                            </div><!-- end row -->
+                        </div><!-- end columns -->
+                        
+                    	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 content-side">
+                        	<div class="space-left">
+                            
+                                <div class="blog-list-block">
+                                    <div class="blog-list-img">
+                                        <img src="images\blog-list-1.jpeg" class="img-responsive" alt="blog-list-image">
+                                    </div><!-- end blog-list-img -->
+                                    
+                                    <div class="blog-list-detail">
+                                        <ul class="list-inline list-unstyled">
+                                            <li><span><i class="fa fa-calendar-o"></i></span>26 May, 2017</li>
+                                            <li><span><i class="fa fa-user"></i></span>by: Admin</li>
+                                        </ul>
+                                        <a href="#"><h2 class="list-title">Lorem ipsum dolor sit amet</h2></a>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod..</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                    </div><!-- end blog-list-detail -->
+                                </div><!-- end blog-list-block -->
+                                
+                                <div id="comments">
+                                
+                                	<div class="comment-block">
+                                		<div class="user-img">
+                                        	<img src="images\user.jpeg" class="img-responsive" alt="user-img">
+                                        </div><!-- end user-img -->
+                                        
+                                        <div class="user-text">
+                                        	<ul class="list-inline list-unstyled">
+                                            	<li class="user-name">Jhon Smith</li>
+                                                <li class="date">27 May, 2017</li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                            <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
+                                        </div><!-- end user-text -->
+                                        
+                                        <div class="comment-block reply-block">
+                                            <div class="user-img">
+                                                <img src="images\user.jpeg" class="img-responsive" alt="user-img">
+                                            </div><!-- end user-img -->
+                                            
+                                            <div class="user-text">
+                                                <ul class="list-inline list-unstyled">
+                                                    <li class="user-name">Jhon Smith</li>
+                                                    <li class="date">27 May, 2017</li>
+                                                </ul>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                                <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
+                                            </div><!-- end user-text -->
+                                        </div><!-- end reply-block -->
+                                	</div><!-- end comment-block -->
+
+                                    <div class="comment-block">
+                                		<div class="user-img">
+                                        	<img src="images\user.jpeg" class="img-responsive" alt="user-img">
+                                        </div><!-- end user-img -->
+                                        
+                                        <div class="user-text">
+                                        	<ul class="list-inline list-unstyled">
+                                            	<li class="user-name">Jhon Smith</li>
+                                                <li class="date">27 May, 2017</li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                            <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
+                                        </div><!-- end user-text -->
+                                	</div><!-- end comment-block -->
+                                    
+                                    <div class="comment-block">
+                                		<div class="user-img">
+                                        	<img src="images\user.jpeg" class="img-responsive" alt="user-img">
+                                        </div><!-- end user-img -->
+                                        
+                                        <div class="user-text">
+                                        	<ul class="list-inline list-unstyled">
+                                            	<li class="user-name">Jhon Smith</li>
+                                                <li class="date">27 May, 2017</li>
+                                            </ul>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                            <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
+                                        </div><!-- end user-text -->
+                                	</div><!-- end comment-block -->
+                                    
+                                </div><!-- end comments -->
+                                
+                                <div id="comment-form">
+                                	<div class="innerpage-heading">
+                                    	<h1>Add Comment</h1>
+                                    </div><!-- end innerpage-heading -->
+                                    
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control input input-lg" placeholder="Your Name" required/="">
+                                                </div>
+                                            </div><!-- end columns -->
+                                        
+                                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control input input-lg" placeholder="Your Email" required/="">
+                                                </div>
+                                            </div><!-- end columns -->
+                                        </div><!-- end row -->
+                                        
+                                        <div class="form-group">
+                                            <textarea class="form-control input-lg" rows="5" placeholder="Your Message"></textarea>
+                                        </div>
+                                        
+                                        <a href="#" class="btn btn-yellow">Submit</a>
+                                    </form>
+                                </div><!-- end comment-form -->
+                                
+                            </div><!-- end space-right -->
+                        </div><!-- end columns -->
+
+                    </div><!-- end row -->
+        		</div><!-- end container -->
+        	</div><!-- end blog-details -->
+            
+        </section><!-- end innerpage-wrapper -->
+        
+        
+        <!--============== NEWSLETTER ===============-->
+        <section id="newsletter" class="banner-padding"> 
+            <div class="container">
+                <div class="row">
+                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <h2>Our Newsletter</h2>
+                        <p>Sign up here to receive interesting updates</p>	
+                        <form>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" class="form-control input-lg" placeholder="your email id" required/="">
+                                    <span class="input-group-btn"><button class="btn btn-lg"><i class="fa fa-paper-plane"></i></button></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end newsletter -->
+        
+        
+        <!--========== FOOTER ==========-->
+        <section>
+            <div id="footer-top" class="banner-padding">
+                <div class="container">
+                    <div class="row">
+                    
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-left" id="more-about">
+                            <h2 class="footer-heading"><span>STAR</span>HOTEL</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+                            <ul class="social-links list-inline list-unstyled">
+                            	<li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                            	<li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                                <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                                <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+                            </ul>
+                        </div><!-- end more-about -->
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 text-left" id="company">
+                            <h4 class="footer-heading">Company</h4>
+                            <ul class="list-unstyled">
+                            	<li><a href="#">Home</a></li>
+                            	<li><a href="#">About</a></li>
+                                <li><a href="#">Rooms</a></li>
+                                <li><a href="#">Dinning</a></li>
+                                <li><a href="#">Staff</a></li>
+                                <li><a href="#">Blog's</a></li>
+                            </ul>
+                        </div><!-- end useful-links -->
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-left" id="f-services">
+                        	<h4 class="footer-heading">Services</h4>
+                            <ul class="list-unstyled">
+                            	<li><a href="#">Restaurant</a></li>
+                            	<li><a href="#">Spa</a></li>
+                                <li><a href="#">Meeting Rooms</a></li>
+                                <li><a href="#">Free Wifi</a></li>
+                                <li><a href="#">Rooms</a></li>
+                                <li><a href="#">Food & Drinks</a></li>
+                            </ul>
+                        </div><!-- end visit-us -->
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-left" id="contact-us">
+                            <h4 class="footer-heading">Contact Us</h4>
+                            <ul class="list-unstyled">
+                            	<li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
+                            	<li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
+                                <li><span><i class="fa fa-envelope"></i></span>info@starhotel.com</li>
+                            </ul>
+                        </div><!-- end social-links -->
+                        
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end footer-top -->
+
+            <div id="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
+                            <p>© 2017 <a href="#">StarHotel</a>. All rights reserved.</p>
+                        </div><!-- end columns -->
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
+                            <ul class="list-unstyled list-inline">
+                            	<li><a href="#">Terms & Condition</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div><!-- end columns -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end footer-bottom -->
+            
+        </section>
+        <!--Footer Section Ends-->
+        
+        
+        <!-- Page Scripts Starts -->
+        <script src="js\jquery.min.js"></script>
+        <script src="js\jquery.colorpanel.js"></script>
+        <script src="js\bootstrap.min.js"></script>
+        <script src="js\custom-navigation.js"></script>
+        <!-- Page Scripts Ends -->
+        
+	</body>
+</html>

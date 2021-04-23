@@ -1,0 +1,155 @@
+{% extends "/client/homepage.html" %}
+{% block content %}
+
+<!--============= PAGE-COVER =============-->
+<section class="page-cover" id="event-listing-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="page-title">Thanh toán</h1>
+            </div><!-- end columns -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end page-cover -->
+
+</div><!-- end home-container -->
+
+
+
+
+<!--=============INNERPAGE-WRAPPER ===========-->
+<section id="reservation-page" class="innerpage-wrapper">
+
+    <div id="reservation" class="search-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="space-right">
+                        <div class="innerpage-heading">
+                            <h1>Phương thức thanh toán</h1>
+                        </div><!-- end innerpage-heading -->
+                        <form action="">
+                            <div class="well well-lg col-lg-12">
+                                <div class="col-lg-1 m-t-15">
+                                    <input type="radio" name="paymentMethod" class="w-h-18" checked>
+                                </div>
+                                <div class="col-lg-8 m-t-15">
+                                    <h4 class="text-bold">Thanh toán bằng thẻ quốc tế Visa, Master, JCB</h4>
+                                    <p class="small">Nhập thông tin hoặc lựa chọn thẻ đã lưu để tiến hành thanh toán  quốc tế qua Stripe</p>
+                                </div>
+                                <div class="col-lg-3 m-t-20">
+                                    <img src="/assets/pluginsClient/images/mastercard.svg"
+                                        class="img-responsive col-lg-6">
+                                    <img src="/assets/pluginsClient/images/visa.svg" class="img-responsive col-lg-6">
+                                </div>
+                            </div>
+
+                            <div class="well well-lg col-lg-12">
+                                    <div class="col-lg-1 m-t-15">
+                                        <input type="radio" name="paymentMethod" class="w-h-18">
+                                    </div>
+                                    <div class="col-lg-8 m-t-15">
+                                        <h4 class="text-bold">Chuyển khoản ngân hàng</h4>
+                                        <p class="small">Tiếp tục để nhận hướng dẫn thanh toán và thông tin ngân hàng từ StarHotel</p>
+                                    </div>
+                                    <div class="col-lg-3 m-t-20">
+                                        <img src="/assets/pluginsClient/images/mastercard.svg"
+                                        class="img-responsive col-lg-6">
+                                    <img src="/assets/pluginsClient/images/visa.svg" class="img-responsive col-lg-6">   
+                                    </div>
+                                </div>
+
+                                <div class="well well-lg col-lg-12">
+                                    <div class="col-lg-1 m-t-15">
+                                        <input type="radio" name="paymentMethod" class="w-h-18">
+                                    </div>
+                                    <div class="col-lg-8 m-t-15">
+                                        <h4 class="text-bold">Thẻ ATM nội địa / Internet Banking</h4>
+                                        <p class="small">Sử dụng Thẻ ATM nội địa để thanh toán qua cổng OnePay</p>
+                                    </div>
+                                    <div class="col-lg-3 m-t-20">
+                                        <img src="/assets/pluginsClient/images/mastercard.svg"
+                                        class="img-responsive col-lg-6">
+                                    <img src="/assets/pluginsClient/images/visa.svg" class="img-responsive col-lg-6">   
+                                    </div>
+                                </div>
+                 
+                                <a  class="btn btn-lg btn-yellow" id="btnPayment">Thanh toán ngay <i class="fa fa-angle-double-right"></i></a>
+
+                         
+                        </form>
+
+
+
+
+
+
+                    </div><!-- end space-right -->
+                </div><!-- end columns -->
+
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 side-bar">
+                    <div class="selected-room-block">
+                        <div class="selected-room-img">
+                            <img src="/assets/pluginsClient/images/selected-room.jpeg" class="img-responsive"
+                                alt="selected-room">
+                        </div><!-- end selected-room-img -->
+
+                        <div class="selected-room-detail">
+                                <h2>{{roomDetail.roomType}}</h2>
+                                <div class="rating">
+                                    <span><i class="fa fa-star"></i></span>
+                                    <span><i class="fa fa-star"></i></span>
+                                    <span><i class="fa fa-star"></i></span>
+                                    <span><i class="fa fa-star"></i></span>
+                                    <span><i class="fa fa-star"></i></span>
+                                </div><!-- end rating -->
+    
+                                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                    <span class="pull-right" id="checkinDay">{{roomDetail.dayCheckin}}</span>
+                                    <span class="pull-left text-bold">Ngày nhận phòng:</span>
+                                </p>
+                                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                    <span class="pull-right" id="checkinDay">{{roomDetail.dayCheckout}}</span>
+                                    <span class="pull-left text-bold">Ngày trả phòng:</span>
+                                </p>
+    
+                                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                    <span class="pull-right" id="checkinDay">{{roomDetail.priceTotalVND}}</span>
+                                    <span class="pull-left text-bold">Giá thuê {{roomDetail.numDay}} ngày:</span>
+                                </p>
+                                {% if roomDetail.valueDiscount != "" %}
+                                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                    <span class="pull-right" >{{roomDetail.priceDiscountVND}}</span>
+                                    <span class="pull-left text-bold">Giảm KM <span>{{roomDetail.valueDiscount}}</span>%:</span>
+                                </p>
+                                {% endif %}
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                    <hr>
+                                </div>
+    
+                                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-l-0">
+                                    <span class="pull-right" id="checkinDay" style="font-size: 24px ;color:black;">{{roomDetail.priceTotalVND}}</span>
+                                    <span class="pull-left text-bold text-red" style="font-size: 24px; color: black;">Tổng
+                                        tiền:</span>
+                                </p>
+                                <input type="text" class="hidden" id='priceTotal' value='{{roomDetail.priceTotal}}'>
+    
+    
+                            </div><!-- end selected-room-detail -->
+                    </div><!-- end selected-room-block -->
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end reservation -->
+
+
+
+</section><!-- end innerpage-wrapper -->
+
+
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/client/payment.js"></script>
+{% endblock %}

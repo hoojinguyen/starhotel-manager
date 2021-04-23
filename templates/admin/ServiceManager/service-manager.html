@@ -1,0 +1,137 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+
+<div class="list-service">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title text-bold">Danh Sách Loại Dịch Vụ</h3>
+                    <button type="button" class="btn btn-sm btn-primary pull-right btn-addServiceType"
+                        id="btn-add-serviceType" data-toggle="modal"
+                        data-target="#modal-addServiceType-updateServiceType">
+                        Thêm Mới Loại Dịch Vụ
+                    </button>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table table-bordered text-center" id="serviceTypes">
+                        <thead style="background-color: #d2d6de">
+                            <tr>
+                                <th>Mã Loại DV</th>
+                                <th>Loại Dịch Vụ</th>
+                                <!-- <th>Active</th> -->
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for serviceType in serviceTypes %}
+                            <tr>
+                                <td>{{ serviceType.code}}</td>
+                                <td>{{ serviceType.name }}</td>
+                                <!-- <td>{{ serviceType.active }}</td> -->
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-xs edit-button-serviceType"
+                                        data-servicetype-id="{{serviceType.id}}" data-toggle="modal"
+                                        data-target="#modal-addServiceType-updateServiceType"><span
+                                            class="fa fa-wrench"></span>  </button>
+                                    <button type="button" class="btn btn-danger btn-xs del-button-serviceType"
+                                        data-servicetype-id=" {{ serviceType.id }} "
+                                        data-servicetype-name=" {{ serviceType.name }} " data-toggle="modal"
+                                        data-target="#modal-del-serviceType"><span
+                                            class="fa fa-trash-o"></span></button>
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title text-bold">Danh Sách Các Dịch Vụ</h3>
+                    <button type="button" class="btn btn-sm btn-primary pull-right btn-addService" id="btn-add-service"
+                        data-toggle="modal" data-target="#modal-addService-updateService">
+                        Thêm Mới Dịch Vụ
+                    </button>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table table-bordered text-center" id="services">
+                        <thead style="background-color: #d2d6de">
+                            <tr>
+                                <th>Mã DV</th>
+                                <th>Tên</th>
+                                <th>Giá</th>
+                                <th>Loại</th>
+                                <th>Đơn vị</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- {% for service in services %}
+                            <tr>
+                                <td>{{ service.code }}</td>
+                                <td>{{ service.name }}</td>
+                                <td>{{ service.price }}</td>
+                                <td>{{ service.serviceTypeId.name }}</td>
+                                <td>{{ service.unit }} </td>
+                                <td>{{ service.status }} </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm edit-button-service"
+                                    data-service-id="{{service.id}}"
+                                        data-toggle="modal" data-target="#modal-addService-updateService"><span
+                                            class="fa fa-wrench"></span>  </button>
+                                    <button type="button" class="btn btn-danger btn-sm del-button-service"
+                                    data-service-id="{{service.id}}"  data-service-name="{{service.name}}"
+                                        data-toggle="modal" data-target="#modal-del-service"><span
+                                            class="fa fa-trash-o"></span> </button>
+                                </td>
+                            </tr>
+                            {% endfor %}    -->
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+
+
+        </div>
+    </div>
+</div>
+
+<section class="pop-up">
+    {% include 'admin/ServiceManager/service-add-update-modal.html' %}
+    {% include 'admin/ServiceManager/service-delete-modal.html' %}
+    {% include 'admin/ServiceManager/service-type-add-update-modal.html' %}
+    {% include 'admin/ServiceManager/service-type-delete-modal.html' %}
+</section>
+
+{% endblock %}
+
+
+
+{% block pageJavascript %}
+<script src="/assets/js/ServiceManager/service.js"></script>
+<script src="/assets/js/ServiceManager/servicetype.js"></script>
+{% endblock %}

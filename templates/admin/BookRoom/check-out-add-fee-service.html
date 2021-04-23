@@ -1,0 +1,82 @@
+<div class="box-body">
+    <div class="modal fade" id="modal-add-fee-service">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="serviceTitle">Thêm phí dịch vụ</h4>
+                </div>
+                <div class="modal-body">
+                        <div class="alert alert-success hide" id="addFeeServiceSuccess">
+                                <strong>Thêm phí thành công!</strong>
+                              </div>
+                              <div class="alert alert-danger hide" id="addFeeServiceFail">
+                                <strong>Thêm phí không thành công!</strong>
+                              </div>
+                    <div class="row" id="clickDrop" style="margin-bottom:20px;">
+
+                        {% for serviceType in serviceTypes %}
+                        <div class="btn-group open col-sm-4" style="margin-top: 20px;">
+                            <button type="button" class="btn btn-default">{{serviceType.name}}</button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="true">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                {% for service in services %} {% if serviceType.id == service.serviceId %}
+                                <li class="text-center" data-service-name="{{ service.name }}" data-service-unit ="{{ service.unit }}"
+                                    data-service-id="{{ service.id }}" data-service-price="{{ service.price }}"
+                                    id="serviceName"><a href="#">{{service.name}}</a></li>
+                                {% endif %} {% endfor %}
+
+                            </ul>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+
+
+                    <form id="addFeeServiceForm" method="POST">
+                        <input type="hidden" name="idService" id='idService' />
+                        <input type="hidden" name="priceService" id='priceService' />
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <label for="nameService">Tên dịch vụ: </label>
+                                <input type="text" class="form-control" name="nameService" id="nameService" readonly>
+                            </div>
+
+                            <div class="form-group col-sm-2">
+                                <label for="unit">Đơn vị: </label>
+                                <input type="text" class="form-control" name="unit" id="unit" readonly>
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                    <label for="priceServiceFormat">Giá: </label>
+                                    <input type="text" class="form-control" name="priceServiceFormat" id="priceServiceFormat" readonly>
+                                </div>
+                            <div class="form-group col-sm-2">
+                                <label for="quantityService">Số lượng: </label>
+                                <input type="number" min="1" value= "1" class="form-control" name="quantityService" id="quantityService">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary pull-right" id="btnSaveAddFeeService">Lưu</button>
+                    <button type="button" class="btn btn-default pull-right m-r-10" data-dismiss="modal">Đóng</button>
+                    <div class="overlay text-center">
+                        <i class="fa fa-spinner fa-spin fa-3x fa-fw text-red" id="refreshAnnimationService"></i>
+                    </div>
+                    <label id="resultOrderService" class="pull-left"></label>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

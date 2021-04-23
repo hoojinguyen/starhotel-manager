@@ -1,0 +1,80 @@
+.has-success label {
+    color: #00a65a;
+    font-style: italic;
+  }
+  
+  .has-success {
+    border-color: #00a65a;
+    box-shadow: none;
+  }
+  
+  .has-error label {
+    color: #dd4b39;
+    font-style: italic;
+  }
+  .has-error {
+    border-color: #dd4b39;
+    box-shadow: none;
+  }
+  .has-error {
+      color: #dd4b39;
+    }
+  
+  #required{
+    color: red;
+    font-style: italic;
+  }
+  /* .box {
+    border: none;
+  } */
+  
+  .modal-footer {
+    clear: both;
+  }
+  
+  .modal-dialog .overlay {  
+    z-index: 50;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  
+  .fa-refreshcenter {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -15px;
+      margin-top: -15px;
+      color: #000;
+      font-size: 30px;
+  }
+  
+  #result {
+    float: left;
+    padding-left: 20px;
+    padding-top: 7px;
+  }
+  .success{
+    color: #00a65a;
+  }
+  
+  .error {
+    color: #dd4b39;
+  }
+  
+
+  table thead {
+    background-color:#d2d6de;
+  }

@@ -1,0 +1,96 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+
+<div class="row">
+	<div class="col-sm-4">
+		<button type="button" class="btn btn-primary btn-sm m-b-10 add-user" id="btnAddUser" data-toggle="modal"
+			data-target="#user-edit-modal"><span class="glyphicon glyphicon-plus"></span> THÊM TÀI KHOẢN</button>
+	</div>
+	<div class="col-sm-8 text-right">
+		<span>Tìm kiếm:</span>
+		<input type="text" class="search" id="userSearchBy" name="userSearchBy">
+	</div>
+
+</div>
+
+<table class="table table-striped" id="users">
+	<thead>
+		<tr id="list-header" style="background-color:lightblue;">
+			<input type="hidden" id="userCurrentSortBy" name="userCurrentSortBy" value="id">
+			<input type="hidden" id="userCurrentSortDir" name="userCurrentSortDir" value="1">
+			<th scope="col">Tài khoản
+				<span class="glyphicon glyphicon-triangle-bottom sort-desc-user" data-sortby="username"
+					data-sortdir="2"></span>
+				<span class="glyphicon glyphicon-triangle-top sort-asc-user" data-sortby="username"
+					data-sortdir="1"></span>
+			</th>
+			<th scope="col">Lần đăng nhập gần nhất</th>
+			<th scope="col">Ngày tạo</th>
+			<th scope="col">Ngày cập nhật</th>
+			<th scope="col">Tùy chọn</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users %}
+		<tr>
+			<!-- <td class="hidden" id="userId">{{ user.id }}</td> -->
+			<td>{{ user.username }}</td>
+			<td>{{ user.lastLogin.date | date("d-m-Y H:i") }}</td>
+			<td>{{ user.createdAt.date | date("d-m-Y H:i") }}</td>
+			<td>{{ user.updatedAt.date | date("d-m-Y H:i") }}</td>
+			<td>
+				<button class="glyphicon glyphicon-edit btn btn-warning edit-user m-r-10" data-toggle="modal"
+					data-target="#user-edit-modal" data-user-id="{{ user.id }}"></button>
+				<button class="glyphicon glyphicon-trash btn btn-danger delete-user" data-toggle="modal"
+					data-target="#user-delete-modal" data-user-id="{{ user.id }}"></button>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+
+</table>
+
+
+
+<div class="row">
+	<div class="col-sm-4 text-left">
+		<p class="show">Hiển thị <span class="paging">1</span> đến <span
+				class="sum-paging">{{params.pageSize}}</span>trên <span class="sum-paging">
+				{{params.pageSize}}</span> kết quả</p>
+	</div>
+	<div class="col-sm-4 text-center">
+		<span>Hiển thị</span>
+		<select name="userEntries" id="userEntries" class="user-entries">
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+		</select>
+		<span>mục</span>
+	</div>
+	<div class="col-sm-4 text-right">
+		<input type="hidden" id="userCurrentPageIndex" name="userCurrentPageIndex" value="1">
+		<nav>
+			<ul class="pagination m-0">
+				<li class="page-item"><a href="#" class="user-page-link" data-page="-1">Trước</a></li>
+				<li class="page-item active"><a href="#" class="user-page-link" data-page="1">1</a></li>
+				<li class="page-item"><a href="#" class="user-page-link" data-page="2">2</a></li>
+				<li class="page-item"><a href="#" class="user-page-link" data-page="3">3</a></li>
+				<li class="page-item"><a href="#" class="user-page-link" data-page="4">4</a></li>
+				<li class="page-item"><a href="#" class="user-page-link" data-page="0">Tiếp</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+{% include 'admin/user/user-row-template.html' %}
+{% include 'admin/user/user-edit-modal.html' %}
+{% include 'admin/user/user-delete-modal.html' %}
+{% endblock %}

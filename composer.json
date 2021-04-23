@@ -1,0 +1,55 @@
+{
+    "name": "Company Webiste",
+    "description": "Company Website" ,
+    "keywords": ["microframework", "rest", "router", "psr7"],
+    "homepage": "http://www.linota.net/",
+    "license": "",
+    "authors": [
+        {
+            "name": "Anh Ta",
+            "email": "linoanhta@gmail.com",
+            "homepage": "http://www.linota.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "^3.12",
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.17",
+        "doctrine/orm": "^2",
+        "doctrine/migrations": "1.5",
+        "symfony/console": "~2.5",
+        "vlucas/phpdotenv": "^2.4",
+        "tuupola/slim-jwt-auth": "^2.3",
+        "respect/validation": "^1.1",
+        "league/fractal": "^0.17.0",
+        "nesbot/carbon": "~1.18",
+        "ircmaxell/filterus": "^1.0.0",
+        "fzaninotto/faker": "^1.7",
+        "phpseclib/phpseclib": "^2.0",
+        "slim/twig-view": "^2.5",
+        "jeremykendall/slim-auth": "^1.0",
+        "andrewdyer/slim3-mailer": "^1.1",
+        "swiftmailer/swiftmailer": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.8 < 6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Romi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Romi\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "process-timeout" : 0,
+		"php": "7.0"
+    },
+    "scripts": {
+    }
+
+}

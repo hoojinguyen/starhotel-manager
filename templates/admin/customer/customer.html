@@ -1,0 +1,128 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box">
+            <div class="box-header"></div>
+            <div class="box-body">
+                <div class="row m-b-10">
+                    <div class="col-sm-6 text-left">
+                        <label class="display-inline-block text-left">Tìm kiếm:
+                            <input type="text" class="form-control input-sm display-inline-block width-auto search"
+                                id="searchBy" name="searchBy">
+                        </label>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button type="button" class="btn btn-primary add-customer" data-toggle="modal"
+                            data-target="#modal-add">Thêm Customer</button>
+                    </div>
+
+                </div>
+                
+                <!-- TODO: TABLE -->
+                <div class="row">
+                    <div class="col-sm-12 table-responsive">
+                        
+                        <table class="table table-bordered text-center" id="customers">
+                            
+                            <!-- TODO: HEADER -->
+                            <thead>
+                                <tr id="list-header">
+                                    <th scope="col">Tên
+                                    </th>
+                                    <th scope="col">Mã Code
+                                    </th>
+                                    <th scope="col">Trạng thái
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <!-- TODO: BODY -->
+                            <tbody id="customersBody">
+                                {% for customer in customers %}
+                                <tr>
+                                    <td>{{ customer.name }}</td>
+                                    <td>{{ customer.code }}</td>
+                                    <td>
+                                        {% if customer.active == 1 %}
+                                        <span class="label label-success">Đang kích hoạt</span>
+                                        {% else %}
+                                        <span class="label label-danger">Vô hiệu hóa</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-center">
+                                    <!-- TODO: button update -->
+                                        <button class=" edit-customer 
+                                                        btn 
+                                                        btn-warning 
+                                                        btn-sm" 
+                                                data-toggle="modal"
+                                                data-target="#modal-add" 
+                                                data-customer-id="{{ customer.id }}"
+                                                title="Sửa thông tin khánh hàng">
+                                                                                <span class="fa fa-wrench"></span>
+                                                                                Sửa</button>
+                                    <!-- TODO: button delete -->
+                                        <button class=" btn
+                                                        btn-danger 
+                                                        btn-sm 
+                                                        btn-danger 
+                                                        delete-customer 
+                                                        m-l-20"
+                                                data-toggle="modal" 
+                                                data-target="#modal-del"
+                                                data-customer-id="{{ customer.id }}"
+                                                title="Xóa thông tin khánh hàng">
+                                                                                <span class="fa fa-trash-o"></span>
+                                                                                Xóa</button>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <!-- TODO: PAGINATION -->
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="show">Hiển thị <span class="paging">1</span> đến <span
+                                class="sum-paging">{{params.pageSize}}</span>
+                            trên <span class="sum-paging">
+                                {{params.pageSize}}</span> kết quả</p>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <span>Hiển thị </span>
+                        <select name="entries" id="entries" class="entries">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span> kết quả</span>
+                    </div>
+                    {% include 'admin/pagination.html' ignore missing %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'admin/customer/customer-delete-modal.html' %}
+{% include 'admin/customer/customer-edit-modal.html' %}
+{% include 'admin/customer/customer-row-template.html' ignore missing %}
+{% endblock %}
+
+<!-- {% block pageJavascript %}
+<script src="/assets/js/"></script>
+{% endblock %} -->

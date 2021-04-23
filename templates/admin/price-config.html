@@ -1,0 +1,130 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+<div class = "box" id="price-config-box">
+	<!-- Widget: user widget style 1 -->
+	<div class="box-box-header with-border">
+		<div class="input-group col-xs-5" style="margin: 20px;">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-primary btn-flat dropdown-toggle" id = "btn-roomType" data-toggle="dropdown"
+					aria-expanded="false">Loại phòng
+					<span class="fa fa-caret-down"></span></button>
+				<ul class="dropdown-menu">
+					<li><a onclick="getPrice(1)">Phòng đơn</a></li>
+					<li><a onclick="getPrice(2)">Phòng đôi</a></li>
+				</ul>
+			</div>
+			<!-- /btn-group -->
+			<input type="text" class="form-control text-center" id = "room-type-display" value = "PHÒNG ĐƠN">
+		</div>
+	</div>
+
+	<div class="box box-widget widget-user-2">
+		<!-- Add the bg color to the header using any of the bg-* classes -->
+
+		<div class="box-footer no-padding">
+			<table class="table table-striped" id = "priceTable">
+				<tr>
+					<td style="padding-left: 20px;"> Giờ đầu </td>
+					<td class="text-center"> {{price.firstHourPrice.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-function = "edit" data-id = {{price.firstHourPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Giờ tiếp theo </td>
+					<td class="text-center"> {{price.nextHourPrice.value}} </td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-function = "edit" data-id = {{price.nextHourPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Giờ đầu sau 23h </td>
+					<td class="text-center">{{price.firstHourAfter23h.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.firstHourAfter23h.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Giờ tiếp theo sau 23h </td>
+					<td class="text-center">{{price.nextHourAfter23h.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.nextHourAfter23h.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Ngày </td>
+					<td class="text-center">{{price.dayPrice.value}} </td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.dayPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Ngày cuối tuần </td>
+					<td class="text-center">{{price.weekendDayPrice.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.weekendDayPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Đêm </td>
+					<td class="text-center">{{price.nightPrice.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.nightPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Đêm cuối tuần </td>
+					<td class="text-center">{{price.weekendNightPrice.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.weekendNightPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Lố giờ </td>
+					<td class="text-center">{{price.OTHourPrice.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.OTHourPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Vào sớm </td>
+					<td class="text-center">{{price.earlyHourPrice.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.earlyHourPrice.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 20px;"> Phụ phí </td>
+					<td class="text-center">{{price.surcharge.value}}</td>
+					<td class="text-center"> <span class = "badge bg-blue price-edit-button" data-function = "edit" data-id = {{price.surcharge.id}}><i
+								class="fa fa-fw fa-wrench"></i></span>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+	</div>
+	<!-- /.widget-user -->
+	<div class="overlay hide">
+		<i class="fa fa-refresh fa-spin"></i>
+	</div>
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block pageJavascript %}
+<script src = "/assets/js/price-config/price-config.js"></script>
+{% endblock %}

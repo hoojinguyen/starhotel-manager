@@ -1,0 +1,279 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+
+<section class="invoice">
+
+    <div class="notification">
+
+        <div class="alert alert-success hide" role="alert" id="checkoutSuccess">
+            <h4 class="alert-heading">Thanh toán thành công !</h4>
+        </div>
+
+        <div class="alert alert-danger hide" role="alert" id="checkoutFail">
+            <h4 class="alert-heading">Nhận phòng không thành công !</h4>
+            <p class="inline">Vui lòng kiểm tra lại !</p>
+
+        </div>
+
+        <div class="alert alert-danger hide" role="alert" id="notFoundBookingRoom">
+            <h4 class="alert-heading">Không tìm thấy phòng hoặc phòng đã đặt nhưng chưa được nhận !</h4>
+            <p class="inline">Vui lòng kiểm tra lại mã đặt phòng !</p>
+
+        </div>
+    </div>
+
+
+    <div class="input-group input-group-lg col-md-6 m-l-10 ">
+        <input type="text" class="form-control text-bold" id="bookingCode"
+            placeholder="Nhập mã đặt phòng hoặc tên phòng ..." name="bookingCode">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-flat" name="btnSearchCodeBooking"
+                id="btnSearchCodeBooking">
+                <em class="fa fa-search"></em>Tìm kiếm<em class="fa fa-spinner fa-spin fa-fw hide"
+                    id="refreshButtonSearch"></em></button>
+
+        </span>
+    </div>
+    <div id="listRoomCheckout" class="row m-t-40">
+        <div class="col-md-12">
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <th colspan="11">Danh Sách Trả Phòng</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Mã đặt phòng</th>
+                        <th>Tên liên hệ</th>
+                        <th>Số khách</th>
+                        <th>Phòng</th>
+                        <th>Loại phòng</th>
+                        <th>Khuyến mại</th>
+                        <th>Trả trước</th>
+                        <th>Ngày trả phòng</th>
+                        <th>Giờ trả phòng</th>
+                        <th>Tác vụ</th>
+                    </tr>
+                    {% if listCheckouts == "" %}
+                    <tr>
+                        <td colspan="8" class="text-center text-bold">Không có phòng nào được trả ...</td>
+                    </tr>
+
+                    {% endif %}
+                    {% if listCheckouts != "" %}
+                    {% for li in listCheckouts %}
+                    {% if li.dayCheckout == currentDay %}
+                    <tr style="background-color: #FAFAD2;">
+                        {% else %}
+                    <tr>
+                        {% endif %}
+
+                        <td>{{ li.bookingCode }}</td>
+                        <td>{{ li.nameContact }}</td>
+                        <td>{{ li.numGuest}}</td>
+                        <td>{{ li.nameRoom }}</td>
+                        <td>{{ li.roomType }}</td>
+                        <td>{{ li.valueDiscount }} </td>
+                        <td>{{ li.deposited }} </td>
+                        <td class="text-bold">{{ li.dayCheckout }} </td>
+                        <td class="text-bold">{{ li.timeArrival }} </td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary btnCheckoutLive"
+                                data-booking-code="{{li.bookingCode}}">Tới Trả phòng
+                                <span class="fa fa-arrow-right"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="formDetailCheckout" class="hide">
+        <div class="row">
+            <div class="row m-l-30 m-b-10 m-t-10">
+                <h2 class="text-bold" id="nameRoom"></h2>
+            </div>
+
+            <div class="row m-l-20">
+                <div class="form-group col-md-6">
+                    <label for="roomTypeDropdown">Loại phòng: </label>
+                    <span id="roomType"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="dayCheckin">Ngày nhận phòng: </label>
+                    <span id="dayCheckin"></span>
+                </div>
+
+            </div>
+            <div class="row m-l-20">
+                <div class="form-group col-md-6">
+                    <label for="nameContact">Tên liên hệ: </label>
+                    <span id="nameContact"></span>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="dayCheckout">Ngày trả Phòng:</label>
+                    <span id="dayCheckout"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="numGuest">Số khách: </label>
+                    <span id="numGuest"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="timeArrival">Giờ trả phòng: </label>
+                    <span id="timeArrival"></span>
+                </div>
+
+                <div class="row m-r-20">
+                    <div class="col-md-6">
+                        <table class="table table-responsive" id="feeRoomDetail">
+                            <thead>
+                                <th colspan="4">CHI TIẾT PHÒNG
+
+                                    <button class="btn btn-primary btn-sm pull-right" id="addFeeRoom"
+                                        data-toggle="modal" data-target="#modal-add-fee-room"><i
+                                            class="fa fa-fw fa-plus"></i>Thêm
+                                        phí</button>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên phí</th>
+                                    <th>Thành tiền</th>
+                                    <th>Xóa</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <table class="table table-responsive" id="feeServiceDetail">
+                            <thead>
+                                <th colspan="7">
+                                    CHI TIẾT DỊCH VỤ
+                                    <button class="btn btn-primary btn-sm pull-right" id="addFeeService"
+                                        data-toggle="modal" data-target="#modal-add-fee-service"><i
+                                            class="fa fa-fw fa-plus"></i>Thêm
+                                        phí</button>
+                                </th>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên dịch vụ</th>
+                                    <th>Đơn vị</th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
+                                    <th>Xóa</th>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row col-md-6 pull-right m-b-5 m-r-20">
+                        <h4 class="col-md-12">
+                            <span class="pull-right col-md-8" id="totalPayment"></span>
+                            <span class="pull-right col-md-4 text-bold">Tổng thanh toán :</span>
+                        </h4>
+                    </div>
+                    <div class="row col-md-6 pull-right m-b-5 m-r-20">
+                        <h4 class="col-md-12">
+                            <span class="pull-right col-md-8" id="discountPrice"></span>
+                            <span class="pull-right col-md-4 text-bold">Giảm giá phí phòng <label
+                                    id="lblDiscount"></label>
+                                %:</span>
+                        </h4>
+                    </div>
+                    <div class="row col-md-6 pull-right m-b-5 m-r-20">
+                        <h4 class="col-md-12">
+                            <span class="pull-right col-md-8" id="depositedPrice"></span>
+                            <span class="pull-right col-md-4 text-bold">Tiền đã trả trước :</span>
+                        </h4>
+                    </div>
+
+                    <div class="row col-md-6 pull-right m-l-20">
+                        ----------------------------------------------------------------------------------------------
+                    </div>
+
+                    <div class="row col-md-6 pull-right m-b-5 m-r-20">
+                        <h3 class="col-md-12">
+                            <span class="pull-right col-md-8 text-red" id="totalNeedPayment"></span>
+                            <span class="pull-right col-md-4 text-bold text-red">Số tiền còn lại:</span>
+                        </h3>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row m-r-10">
+                    <div class="col-sm-12">
+                        <input type="hidden" id="deposited" name="deposited">
+                        <input type="hidden" id="valueDiscount" name="valueDiscount">
+                        <input type="hidden" id="priceDiscount" name="priceDiscount">
+                        <input type="hidden" id="priceTotal" name="priceTotal">
+                        <input type="hidden" id="totalFeeService" name="totalFeeService">
+                        <input type="hidden" id="totalFeeRoom" name="totalFeeRoom">
+                        <input type="hidden" id="idBooking" name="idBooking">
+                        <input type="hidden" id="idBookingRoom" name="idBookingRoom">
+                        <input type="hidden" id="idBill" name="idBill">
+                        <button id="btnPayment" class="btn btn-success pull-right margin"><i
+                                class="fa fa-fw fa-cc-visa m-r-10"></i>Thanh toán</button>
+                        <button class="btn btn-default margin pull-right" id="printBill"><i
+                                class="fa fa-fw fa-print m-r-10"></i><span>In
+                                hóa
+                                đơn</span>
+                        </button>
+                        <!-- <a href="checkout"   class="btn btn-danger pull-right m-r-20">Quay lại <span class="fa fa-reply"></span></a> -->
+                        <a href="checkout" class="btn btn-danger margin pull-right"><i
+                            class="fa fa-fw fa-reply m-r-10"></i><span>Quay lại</span>
+                        </a>	
+                    </div>
+
+
+                </div>
+                <!-- <div class="overlay">
+                        <i class="fa fa-refresh fa-spin"></i>
+                    </div> -->
+            </div>
+        </div>
+
+</section>
+
+<!-- <script src="/_temp/AdminLTE-2.4.10/bower_components/select2/dist/js/select2.full.min.js"></script> -->
+
+<section class="pop-up">
+    {% include 'admin/BookRoom/check-out-add-fee-room.html' %}
+    {% include 'admin/BookRoom/check-out-add-fee-service.html' %}
+</section>
+
+{% endblock %}
+
+
+{% block pageJavascript %}
+<script src="/assets/js/BookRoom/checkout.js"></script>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!-- Modal Thêm mới loại phòng , chỉnh sửa loại phòng  -->
+<div class="modal fade" id="modal-addRoomType-updateRoomType">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Thông Tin Loại Phòng</h4>
+			</div>
+			<div class="modal-body">
+				
+				<form id="roomTypeInfo" method="POST">
+					<input type="hidden" value="addRoomType">
+					<div class="form-group">
+						<label for="nameRoomType">Tên loại phòng:</label>
+						<input type="text" class="form-control" id="nameRoomType" name="nameRoomType" placeholder="Vd: Phòng đơn">
+					</div>
+					<div class="form-group">
+						<label for="price">Giá loại phòng:</label>
+						<input type="number" min="10000" max="100000000" class="form-control" id="price" name="price" placeholder="Vd: 150.000 VNĐ">
+					</div>
+					<div class="form-group">
+						<label for="numOfPeopleStay">Số người ở tối đa:</label>
+						<input type="number" min="1" max="20" class="form-control" id="numOfPeopleStay" name="numOfPeopleStay" placeholder="Vd: 4 người">
+					</div>
+					<div class="form-group">
+						<label for="codeRoomType">Code:</label>
+						<input type="text" class="form-control" id="codeRoomType" name="codeRoomType">
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<label id="resultRoomType" class="pull-left text-red hidden"></label>
+				<button type="button" class="btn btn-default m-r-10" data-dismiss="modal">Đóng</button>
+				<button  id="add-or-update-roomType"" class="btn btn-primary">Lưu</button>
+			</div>
+			<div class="overlay">
+				<i class="fa fa-spinner fa-spin fa-3x fa-fw fa-refreshcenter"></i>
+			</div>
+		</div>
+	</div>
+</div>

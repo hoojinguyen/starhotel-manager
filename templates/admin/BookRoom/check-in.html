@@ -1,0 +1,262 @@
+{% extends "/admin/page.html" %} {% block pageHeader %} {{ pageHeader }} {% endblock %} {% block pageDescription %}
+{{ pageDescription }} {% endblock %} {% block content %}
+
+<section class="invoice">
+
+	<div class="alert alert-success hide" role="alert" id="checkInSuccess">
+		<h4 class="alert-heading">Nhận phòng thành công !</h4>
+	</div>
+
+	<div class="alert alert-danger hide" role="alert" id="checkInFail">
+		<h4 class="alert-heading">Nhận phòng không thành công !</h4>
+		<p class="inline">Vui lòng kiểm tra lại !</p>
+
+	</div>
+
+	<div class="alert alert-danger hide" role="alert" id="notFoundBookingRoom">
+		<h4 class="alert-heading">Không tìm thấy phòng được đặt !</h4>
+		<p class="inline">Vui lòng kiểm tra lại mã đặt phòng !</p>
+
+	</div>
+
+	<div class="alert alert-success hide" role="alert" id="lblSuccess">
+		<h4 class="alert-heading" id="lblNotification"></h4>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-left">
+			<div class="box-group">
+				<div class="input-group input-group-lg">
+					<input type="text" class="form-control text-bold" id="bookingCode"
+						placeholder="Nhập mã đặt phòng hoặc tên phòng ..." name="bookingCode" value='{{bookingCode}}'>
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default btn-flat" name="btnSearchCode" id="btnSearchCode">
+							<em class="fa fa-search"></em>Tìm kiếm<em class="fa fa-spinner fa-spin fa-fw hide"
+								id="refreshButtonSearch"></em></button>
+
+					</span>
+				</div>
+
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div id="listRoomCheckin" class="row m-t-40">
+		<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+			<table class="table table-hover table-responsive">
+				<thead>
+					<th colspan="11">Danh Sách Nhận Phòng</th>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Mã đặt phòng</th>
+						<th>Tên liên hệ</th>
+						<th>Số khách</th>
+						<th>Phòng</th>
+						<th>Loại phòng</th>
+						<th>Khuyến mại</th>
+						<th>Trả trước</th>
+						<th>Ngày đặt phòng</th>
+						<th>Ngày nhận phòng</th>
+						<th>Giờ nhận phòng</th>
+						<th>Tác vụ</th>
+					</tr>
+					{% if listCheckins == "" %}
+					<tr>
+						<td colspan="10" class="text-center text-bold">Không có phòng nào được đặt ...</td>
+					</tr>
+
+					{% endif %}
+					{% if listCheckins != "" %}
+					{% for li in listCheckins %}
+					{% if li.dayCheckin == currentDay %}
+					<tr style="background-color: #FAFAD2;">
+						{% else %}
+					<tr>
+						{% endif %}
+
+						<td>{{ li.bookingCode }}</td>
+						<td>{{ li.nameContact }}</td>
+						<td>{{ li.numGuest }}</td>
+						<td>{{ li.nameRoom }}</td>
+						<td>{{ li.roomType }}</td>
+						<td>{{ li.valueDiscount }} </td>
+						<td>{{ li.deposited }} </td>
+						<td class="text-bold">{{ li.dayBooking }} </td>
+						<td class="text-bold">{{ li.dayCheckin }} </td>
+						<td class="text-bold">{{ li.timeArrival }} </td>
+						<td>
+							<button type="button" class="btn btn-sm btn-primary btnCheckinLive"
+								data-booking-code="{{li.bookingCode}}">Tới Nhận phòng
+								<span class="fa fa-arrow-right"></span>
+							</button>
+							<button type="button" class="btn btn-sm btn-warning btnChangeRoom" data-toggle="modal" data-target="#modal-findEmptyRoom"
+								data-booking-room-id="{{li.idBookingRoom}}"
+								data-room-type-id="{{li.idRoomType}}"
+								data-room-id="{{li.idRoom}}"
+								data-bill-id="{{li.idBill}}"
+								data-day-checkin="{{ li.dayCheckinOrigin }}" 
+								data-day-checkout="{{ li.dayCheckoutOrigin }}"
+								data-room-type="0" 
+								>Đổi Phòng
+								<span class="fa fa-refresh"></span>
+							</button>
+							<button type="button" class="btn btn-sm btn-danger btnCancelBookRoom" data-toggle="modal" data-target="#modal-cancel"
+								data-booking-room-id="{{li.idBookingRoom}}"
+								data-booking-code="{{li.bookingCode}}"
+								>Hủy Phòng
+								<span class="fa fa-close"></span>
+							</button>
+						
+						</td>
+					</tr>
+					{% endfor %}
+					{% endif %}
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<form id="infoBookRoom" class="hidden" method="POST">
+		<!-- info row -->
+		<div class="row invoice-info">
+			<!-- Thông tin liên hệ -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 invoice-col">
+				<h3 class="box-title font-light m-l-10">Thông tin liên hệ:</h3>
+
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblNameGuest" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Tên liên hệ:
+						</label>
+						<span class="text-uppercase text-bold col-xs-8 col-md-6 col-sm-8 col-lg-8"
+							id="lblNameContact"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblPhoneNumber" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">SĐT: </label>
+						<span class="text-bold col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblPhoneNumberContact"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblEmailContact" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Email: </label>
+						<span class="col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblEmailContact"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblNote" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Ghi chú: </label>
+						<span class="col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblNote"></span>
+					</div>
+				</div>
+			</div>
+
+			<!-- /.col -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 invoice-col">
+
+				<!-- Thông tin phòng -->
+				<h3 class="box-title font-light m-l-10">Thông tin yêu cầu:</h3>
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblDayCheckin" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Ngày nhận phòng: </label>
+						<span class="text-uppercase text-bold col-xs-8 col-md-6 col-sm-8 col-lg-8"
+							id="lblDayCheckin"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblDayCheckout" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Ngày trả phòng:
+						</label>
+						<span class="text-bold col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblDayCheckout"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblTimeArrival" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Giờ nhận phòng:
+						</label>
+						<span class="text-bold col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblTimeArrival"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblNumGuest" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Số khách:
+						</label>
+						<span class="text-bold col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblNumGuest"></span>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblNameRoom" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Phòng: </label>
+						<span class="col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblNameRoom"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<label for="lblRoomType" class="col-xs-4 col-md-6 col-sm-4 col-lg-4">Loại phòng: </label>
+						<span class="col-xs-8 col-md-6 col-sm-8 col-lg-8" id="lblRoomType"></span>
+					</div>
+				</div>
+			</div>
+			<!-- /.col -->
+
+		</div>
+		<!-- /.row -->
+
+		<!-- Table row -->
+		<div class="row">
+			<div class="col-xs-12 table-responsive">
+				<h3 class="box-title font-light">Danh sách nhận phòng:</h3>
+				<table class="table table-hover" id="tableListCheckInRoom">
+					<thead>
+						<tr>
+							<th>Mã đặt phòng</th>
+							<th>Phòng</th>
+							<th>Ngày nhận phòng</th>
+							<th>Giờ nhận phòng</th>
+							<th>Trạng thái</th>
+							<th>Tác vụ</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+
+
+				</table>
+			</div>
+			<!-- /.col -->
+			<a href="checkin"   class="btn btn-md btn-danger pull-right m-r-20">Quay lại <span class="fa fa-reply"></span></a>	
+		</div>
+		<!-- /.row -->
+
+
+	
+	</form>
+	
+</section>
+
+<section class="pop-up">
+	{% include 'admin/BookRoom/check-in-confirm-modal.html' %}
+	{% include 'admin/BookRoom/check-in-add-guest-modal.html' %}
+	{% include 'admin/BookRoom/check-in-cancel-book-room-modal.html' %}
+	{% include 'admin/BookRoom/list-empty-room.html' %}
+</section>
+
+
+
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/BookRoom/checkin.js"></script>
+{% endblock %}

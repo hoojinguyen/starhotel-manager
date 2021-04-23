@@ -1,0 +1,14 @@
+<script id="userRowTemplate" type="text/html">
+	<tr>
+		<td> [user_username] </td>
+		<td> [user_lastLogin] </td>
+		<td> [user_createdAt] </td>
+		<td> [user_updatedAt] </td>
+		<td>
+			<button class="glyphicon glyphicon-edit btn btn-warning edit-user m-r-10" data-toggle="modal"
+				data-target="#user-edit-modal" data-user-id="[user_id]"></button>
+			<button class="glyphicon glyphicon-trash btn btn-danger delete-user" data-toggle="modal"
+				data-target="#user-delete-modal" data-user-id="[user_id]"></button>
+		</td>
+	</tr>
+</script>

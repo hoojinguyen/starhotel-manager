@@ -1,0 +1,149 @@
+{% extends "/admin/page.html" %} {% block pageHeader %} {{ pageHeader }} {% endblock %} {% block pageDescription %}
+{{ pageDescription }} {% endblock %} {% block content %}
+
+<div>
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="box-body col-xs-7">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông tin phòng thuê</h3>
+                </div>
+                <form role="form" id="rentInfo">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="form-group col-md-6 col-xs-12">
+                                <label>Loại phòng</label>
+                                <select class="form-control" name="roomType">
+                                    <option value='1'>Phòng đơn</option>
+                                    <option value='2'>Phòng đôi</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label>Số người</label>
+                                <input type="number" name="people" class="form-control" value="1">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-xs-12">
+                                <label>Kiểu thuê</label>
+                                <select id="rentType" class="form-control" name="rentType">
+                                    <option value="1">Theo giờ</option>
+                                    <option value="2">Theo ngày</option>
+                                    <option value="3">Theo đêm</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-6" id="hours">
+                                <label>Số giờ thuê</label>
+                                <input name="hours" type="number" class="form-control" value="1">
+                            </div>
+
+                            <div class="form-group col-xs-6 extraHour" name="earlyHour">
+                                <label>Vào sớm</label>
+                                <input name="earlyHour" type="number" class="form-control" value="0">
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+
+                            <div class="form-group col-xs-6 pull-right extraHour" name='OTHour'>
+                                <label>Lố giờ</label>
+                                <input type="number" name="OTHour" class="form-control" value="0">
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-3 text-center pull-right" id="isWeekend">
+                                <label class="">
+                                    Cuối tuần
+                                </label> <br>
+                                <input name="isWeekend" type="checkbox" class="minimal"  style="opacity: 0;">
+                            </div>
+                            <div class="form-group col-xs-3 text-center pull-right" id="isAfter23h">
+                                <label class="">
+                                    Sau 23 giờ
+                                </label> <br>
+                                <input name="isAfter23h" type="checkbox" class="minimal" style="opacity: 0;">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </form>
+                <div class="box-footer">
+                    <button id="quotationButton" class="btn btn-primary pull-right">Báo giá</button>
+                </div>
+            </div>
+            <div class="box-body col-md-5 col-xs-10">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Báo giá</h3>
+                </div>
+
+                <div class="row hide" id="byHour">
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí Giờ đầu: </h4>
+                        <h4 class="col-sm-8" id="firstHourPrice"></h4>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí Giờ tiếp theo: </h4>
+                        <h4 class="col-sm-8" id="nextHourPrice"></h4>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí phụ thu: </h4>
+                        <h4 class="col-sm-8" id="surchargeHourPrice"></h4>
+                    </div>
+                    <div class="form-group col-sm-12 text-bold text-red">
+                        <h3 class="col-sm-4">Tổng tiền: </h3>
+                        <h3 class="col-sm-8" id="totalHourPrice"></h3>
+                    </div>
+                </div>
+
+                <div class="row hide" id="byDayOrNight">
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí Ngày/Đêm: </h4>
+                        <h4 class="col-sm-8" id="dayOrNightPrice"></h4>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí vào sớm: </h4>
+                        <h4 class="col-sm-8" id="earlyPrice"></h4>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí lố giờ: </h4>
+                        <h4 class="col-sm-8" id="otHourPrice"></h4>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <h4 class="col-sm-4">Phí phụ thu: </h4>
+                        <h4 class="col-sm-8" id="surchargeDayOrNightPrice"></h4>
+                    </div>
+                    <div class="form-group col-sm-12 text-bold text-red">
+                        <h3 class="col-sm-4">Tổng tiền: </h3>
+                        <h3 class="col-sm-8" id="totalDayOrNightPrice"></h3>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- <div class="overlay">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div> -->
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/BookRoom/pricequote.js"></script>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+
+<div class="list-service">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title text-bold">Danh Sách Nhân Viên</h3>
+                    <button type="button" class="btn btn-primary pull-right btn-addEmployee"
+                        id="btn-add-employee" data-toggle="modal"
+                        data-target="#modal-addEmployee-updateEmployee">
+                        Thêm Mới Nhân Viên
+                    </button>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table table-hover text-center" id="employees">
+                        <thead style="background-color: #d2d6de">
+                            <tr>
+                                <th>Mã NV</th>
+                                <th>Tên</th>
+                                <th>Giới Tính</th>
+                                <th>SĐT</th>
+                                <th>CMND</th>
+                                <th>Địa Chỉ</th>
+                                <th>Ngày Sinh</th>
+                                <th>Ngày Vào Làm</th>
+                                <th>Chức Vụ</th>
+                                <th>Ca Làm </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="pop-up">
+    {% include 'admin/employee/employee-edit-add.html' %}
+    {% include 'admin/employee/employee-delete.html' %}
+</section>
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/Employee/Employee.js"></script>
+{% endblock %}

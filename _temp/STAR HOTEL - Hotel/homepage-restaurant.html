@@ -1,0 +1,1134 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <title>Restaurant</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+        
+        <!-- Google Fonts -->	
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CPlayfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+        
+        <!-- Bootstrap Stylesheet -->	
+        <link rel="stylesheet" href="css\bootstrap.min.css">
+        
+        <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="css\font-awesome.min.css">
+            
+        <!-- Custom Stylesheets -->	
+        <link rel="stylesheet" href="css\style.css">
+        <link rel="stylesheet" id="cpswitch" href="css\yellow.css">
+        <link rel="stylesheet" href="css\responsive.css">
+    
+        <!-- Owl Carousel Stylesheet -->
+        <link rel="stylesheet" href="css\owl.carousel.css">
+        <link rel="stylesheet" href="css\owl.theme.css">
+        
+        <!-- Magnific Gallery -->
+        <link rel="stylesheet" href="css\magnific-popup.css">
+        
+        <!-- Color Panel -->
+        <link rel="stylesheet" href="css\jquery.colorpanel.css">
+    </head>
+    
+    
+    <body>
+        
+        <!--====== LOADER =====-->
+        <div class="loader"></div>
+        
+        
+        <!--========== COLOR-PANEL ==========-->
+        <div id="colorPanel" class="colorPanel">
+            <a id="cpToggle" href="#"></a>
+            <ul></ul>
+        </div><!-- end colorPanel -->
+        
+        
+        <!--========== SIDENAV CONTENT ==========-->
+        <div class="sidenav-content">
+            <div id="mySidenav" class="sidenav">
+                <h2 id="web-name"><span>Star</span> <br> Restaurant</h2>
+
+                <div id="main-menu">
+                	<div class="closebtn">
+                        <button class="btn btn-default" id="close-btn">&times;</button>
+                    </div><!-- end close-btn -->
+                    
+                    <div class="list-group panel">
+                    
+                        <a href="#home-links" class="list-group-item active" data-toggle="collapse" data-parent="#main-menu">Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu" id="home-links">
+                            <a href="#homepage-1-links" class="list-group-item" data-toggle="collapse">Homepage 1<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="homepage-1-links">
+                                <a href="homepage-1-slider.html" class="list-group-item">Slider Version</a>
+                                <a href="homepage-1-image-back.html" class="list-group-item">Image Version</a>
+                                <a href="homepage-1-video-back.html" class="list-group-item">Video Version</a>
+                                <a href="homepage-1-landing.html" class="list-group-item">Landing Page</a>
+                            </div>
+                            
+                            <a href="#homepage-2-links" class="list-group-item" data-toggle="collapse">Homepage 2<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="homepage-2-links">
+                                <a href="homepage-2-slider.html" class="list-group-item">Slider Version</a>
+                                <a href="homepage-2-image-back.html" class="list-group-item">Image Version</a>
+                                <a href="homepage-2-video-back.html" class="list-group-item">Video Version</a>
+                                <a href="homepage-2-landing.html" class="list-group-item">Landing Page</a>
+                            </div>
+                            
+                            <a href="#homepage-3-links" class="list-group-item" data-toggle="collapse">Homepage 3<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="homepage-3-links">
+                                <a href="homepage-3-slider.html" class="list-group-item">Slider Version</a>
+                                <a href="homepage-3-image-back.html" class="list-group-item">Image Version</a>
+                                <a href="homepage-3-video-back.html" class="list-group-item">Video Version</a>
+                                <a href="homepage-3-landing.html" class="list-group-item">Landing Page</a>
+                            </div>
+                            <a href="#" class="list-group-item active">Restaurant Homepage</a>
+                        </div><!-- end sub-menu -->
+                        
+                        <a href="#room-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">Rooms<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                        <div class="collapse sub-menu" id="room-links">
+                            <a href="room-listings.html" class="list-group-item">List View Full Width</a>
+                            <a href="room-listings-left-sidebar.html" class="list-group-item">List View Left Sidebar</a>
+                            <a href="room-listings-right-sidebar.html" class="list-group-item">List View Right Sidebar</a>
+                            <a href="room-grid.html" class="list-group-item">Grid View Full Width</a>
+                            <a href="room-grid-left-sidebar.html" class="list-group-item">Grid View Left Sidebar</a>
+                            <a href="room-grid-right-sidebar.html" class="list-group-item">Grid View Right Sidebar</a>
+                            <a href="room-details-left-sidebar.html" class="list-group-item">Room Details Left Sidebar</a>
+                            <a href="room-details-right-sidebar.html" class="list-group-item">Room Details Right Sidebar</a>
+                        </div><!-- end sub-menu -->
+                        
+                        <a href="#dining-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">Dining<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                        <div class="collapse sub-menu" id="dining-links">
+                            <a href="dining-1.html" class="list-group-item">Dining-1</a>
+                            <a href="dining-2.html" class="list-group-item">Dining-2</a>
+                        </div><!-- end sub-menu -->
+                        
+                        <a href="#features-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">Features<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                        <div class="collapse sub-menu mega-sub-menu" id="features-links">
+                            <a href="#header-style-links" class="list-group-item" data-toggle="collapse">Header<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="header-style-links">
+                                <a href="feature-header-1.html" class="list-group-item">Header Style 1</a>
+                                <a href="feature-header-2.html" class="list-group-item">Header Style 2</a>
+                                <a href="feature-header-3.html" class="list-group-item">Header Style 3</a>
+                                <a href="feature-header-4.html" class="list-group-item">Header Style 4</a>
+                            </div>
+                            
+                            <a href="#page-title-style-links" class="list-group-item" data-toggle="collapse">Page Title<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="page-title-style-links">
+                                <a href="feature-page-cover-1.html" class="list-group-item">Page Title Style 1</a>
+                                <a href="feature-page-cover-2.html" class="list-group-item">Page Title Style 2</a>
+                                <a href="feature-page-cover-3.html" class="list-group-item">Page Title Style 3</a>
+                            </div>
+                            
+                            <a href="#footer-style-links" class="list-group-item" data-toggle="collapse">Footer<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="footer-style-links">
+                                <a href="feature-footer-1.html" class="list-group-item">Footer Style 1</a>
+                                <a href="feature-footer-2.html" class="list-group-item">Footer Style 2</a>
+                                <a href="feature-footer-3.html" class="list-group-item">Footer Style 3</a>
+                                <a href="feature-footer-4.html" class="list-group-item">Footer Style 4</a>
+                            </div>
+                            
+                            <a href="#f-forms-links" class="list-group-item" data-toggle="collapse">Forms<span><i class="fa fa-caret-down arrow"></i></span></a>
+                            <div class="collapse sub-menu mega-sub-menu-links" id="f-forms-links">
+                                <a href="login-1.html" class="list-group-item">Login 1</a>
+                                <a href="login-2.html" class="list-group-item">Login 2</a>
+                                <a href="registration-1.html" class="list-group-item">Registration 1</a>
+                                <a href="registration-2.html" class="list-group-item">Registration 2</a>
+                                <a href="forgot-password-1.html" class="list-group-item">Forgot Password 1</a>
+                                <a href="forgot-password-2.html" class="list-group-item">Forgot Password 2</a>
+                            </div>
+                        </div><!-- end sub-menu -->
+                        
+                        <a href="#pages-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">Pages<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                        <div class="collapse sub-menu" id="pages-links">
+                        	<div class="list-group-heading list-group-item">Standard <span>Pages</span></div>
+                            <a href="about-1.html" class="list-group-item">About-1</a>
+                            <a href="about-2.html" class="list-group-item">About-2</a>
+                            <a href="services-1.html" class="list-group-item">Services-1</a>
+                            <a href="services-2.html" class="list-group-item">Services-2</a>
+                            <a href="event-listings.html" class="list-group-item">Event Listing</a>
+                            <a href="event-details.html" class="list-group-item">Event Details</a>
+                            <a href="blog-listings-left-sidebar.html" class="list-group-item">Blog Left Sidebar</a>
+                            <a href="blog-listings-right-sidebar.html" class="list-group-item">Blog Right Sidebar</a>
+                            <a href="blog-details-left-sidebar.html" class="list-group-item">Blog Detail Left Sidebar</a>
+                            <a href="blog-details-right-sidebar.html" class="list-group-item">Blog Detail Right Sidebar</a>
+                            <a href="gallery-2-columns.html" class="list-group-item">2 Columns Gallery</a>
+                            <a href="gallery-3-columns.html" class="list-group-item">3 Columns Gallery</a>
+                            <a href="gallery-4-columns.html" class="list-group-item">4 Columns Gallery</a>
+                            <a href="gallery-masonry.html" class="list-group-item">Masonry Gallery</a>
+                            <a href="spa-page.html" class="list-group-item">Spa</a>
+                            <a href="team-1.html" class="list-group-item">Team 1</a>
+                            <a href="team-2.html" class="list-group-item">Team 2</a>
+                            <a href="offers.html" class="list-group-item">Offers</a>
+                            <a href="testimonials-1.html" class="list-group-item">Testimonials 1</a>
+                            <a href="testimonials-2.html" class="list-group-item">Testimonials 2</a>
+                            <a href="testimonials-3.html" class="list-group-item">Testimonials 3</a>
+                            <a href="pricing-1.html" class="list-group-item">Pricing 1</a>
+                            <a href="pricing-2.html" class="list-group-item">Pricing 2</a>
+                            <a href="reservation-left-sidebar.html" class="list-group-item">Reservation-Left-Sidebar</a>
+                            <a href="reservation-right-sidebar.html" class="list-group-item">Reservation-Right-Sidebar</a>
+                            <div class="list-group-heading list-group-item">Special <span>Pages</span></div>
+                            <a href="coming-soon.html" class="list-group-item">Coming Soon</a>
+                            <a href="error-page.html" class="list-group-item">404 Page</a>
+                        </div><!-- end sub-menu -->
+                        
+                        <a href="#contact-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">Contact Us<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                        <div class="collapse sub-menu" id="contact-links">
+                            <a href="contact-1.html" class="list-group-item">Contact-1</a>
+                            <a href="contact-2.html" class="list-group-item">Contact-2</a>
+                        </div><!-- end sub-menu -->
+                    </div><!-- end list-group -->
+                    
+                    <ul class="main-menu-social list-unstyled list-inline">
+                    	<li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-pinterest"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-dribbble"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                    </ul>
+                    <p>Copyright © 2017. All rights are reserved.</p>
+                </div><!-- end main-menu -->
+            </div><!-- end mySidenav -->
+        </div><!-- end sidenav-content -->
+        
+        
+        <!--========= FLEX SLIDER =========-->
+        <section class="flexslider-container" id="slider-2">
+        	<div class="rstnt-header">
+            	<div class="container">               	
+                    <div class="rstnt-header-menu">
+                    	<button class="btn" id="menu-btn"><span><i class="fa fa-navicon"></i></span></button>
+                    </div><!-- end rstnt-header-menu -->
+                    
+                	<div class="rstnt-header-name">
+                    	<a href="#"><span>Star</span>Restaurant</a>
+                    </div><!-- end rstnt-header-name -->
+                </div><!-- end container -->
+            </div><!-- end rstnt-header -->
+                        
+            <div class="flexslider">
+                <ul class="slides">
+                    
+                    <li class="item-1" style="background:linear-gradient(rgba(0, 0, 0,0.5), rgba(0, 0, 0,0.5)), url('images/restaurant-slider-1.jpeg'); background-size:cover;">
+                    	<div class=" meta">         
+                            <div class="container">
+                                <h1>Fresh & Delicious</h1>
+                                <p>Lorem ipsum dolor sit amet, no mollis regione accusamus qui. Legere voluptua mei an, 
+possim aliquid utroque.</p>
+                                <div class="category">
+                                    <button class="btn btn-lg my-btn btn-yellow">Learn More <i class="fa fa-angle-right"></i></button>
+                                    <button class="btn btn-lg my-btn btn-white">View More <i class="fa fa-angle-right"></i></button>
+                                </div>
+                            </div>  
+                        </div>
+                    </li><!-- end item-1 -->
+                    
+                    <li class="item-2" style="background:linear-gradient(rgba(0, 0, 0,0.5), rgba(0, 0, 0,0.5)), url('images/restaurant-slider-2.jpeg'); background-size:cover;">
+                        <div class=" meta">         
+                            <div class="container">
+                                <h1>Fresh & Delicious</h1>
+                                <p>Lorem ipsum dolor sit amet, no mollis regione accusamus qui. Legere voluptua mei an, 
+possim aliquid utroque.</p>
+                                <div class="category">
+                                    <button class="btn btn-lg my-btn btn-yellow">Learn More <i class="fa fa-angle-right"></i></button>
+                                    <button class="btn btn-lg my-btn btn-white">View More <i class="fa fa-angle-right"></i></button>
+                                </div>
+                            </div>  
+                        </div>
+                    </li><!-- end item-2 -->
+                   
+                </ul>
+            </div><!-- end slider -->
+        </section><!-- end flexslider-container -->
+        
+        
+        <!--=============== BANNER-3 ==============-->
+        <section id="banner-3" class="banner-padding"> 
+            <div class="container text-center">
+                <div class="row">
+                	<div class="col-xs-12 col-sm-4">
+                    	<div class="b3-block">
+                    		<span><i class="fa fa-cutlery"></i></span>
+                        	<h3>Best Service</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt .</p>
+                        </div><!-- end b3-block -->
+                    </div><!-- end columns -->
+                    
+                    <div class="col-xs-12 col-sm-4">
+                    	<div class="b3-block">
+                    		<span><i class="fa fa-thumbs-up"></i></span>
+                        	<h3>Quality Food</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt .</p>
+                        </div><!-- end b3-block -->
+                    </div><!-- end columns -->
+                    
+                    <div class="col-xs-12 col-sm-4">
+                    	<div class="b3-block">
+                    		<span><i class="fa fa-fire"></i></span>
+                        	<h3>Perfect Cooked</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt .</p>
+                        </div><!-- end b3-block -->
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end banner-3 -->
+        
+        
+        <!--================ ABOUT-INTRO ==============-->
+        <section id="about-intro" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-5 text-center">
+                        <div class="about-intro-img">
+                            <img src="images\about-intro.png" class="img-responsive" alt="about-img">
+                        </div><!-- end about-intro-img -->
+                    </div><!-- end columns -->
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-7">
+                        <div class="about-intro-text">
+                            <h4>Welcome to Our Restaurant</h4>
+                            <h2>Provide the best quality services in Food</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget commodo orci. Integer varius nibh eu mattis porta. Pellentesque dictum sem eget cursus semper. Nullam quis blandit lorem.</p>
+                            <a href="#" class="btn btn-yellow btn-lg">Learn More</a>
+                        </div><!-- end about-intro-text -->
+                    </div><!-- end columns -->
+                 </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end about-intro -->
+            
+        
+        <!--================ SPECIALS ==============-->
+        <section id="specials" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                    	<div class="page-heading black">
+                        	<h2>Our <span>Specials</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div><!-- end page-heading -->
+                        
+                        <div class="owl-carousel owl-theme owl-custom-arrow" id="owl-specials">
+
+                            <div class="item">
+                                <div class="special-block">
+                                	<a href="#">
+                                        <div class="special-image">
+                                            <img src="images\specials-1.jpeg" alt="special-img" class="img-responsive">
+                                            <div class="special-title">
+                                                <h4>Chicken</h4>
+                                            </div><!-- end special-title -->
+                                        </div><!-- end special-image -->
+                                    </a>
+                                </div><!-- end special-block -->
+                            </div><!-- end item -->
+							
+                            <div class="item">
+                                <div class="special-block">
+                                	<a href="#">
+                                        <div class="special-image">
+                                            <img src="images\specials-2.jpeg" alt="special-img" class="img-responsive">
+                                            <div class="special-title">
+                                                <h4>Ice Cream</h4>
+                                            </div><!-- end special-title -->
+                                        </div><!-- end special-image -->
+                                    </a>
+                                </div><!-- end special-block -->
+                            </div><!-- end item -->
+                            
+                            <div class="item">
+                                <div class="special-block">
+                                	<a href="#">
+                                        <div class="special-image">
+                                            <img src="images\specials-3.jpeg" alt="special-img" class="img-responsive">
+                                            <div class="special-title">
+                                                <h4>Pizza</h4>
+                                            </div><!-- end special-title -->
+                                        </div><!-- end special-image -->
+                                    </a>
+                                </div><!-- end special-block -->
+                            </div><!-- end item -->
+                            
+                            <div class="item">
+                                <div class="special-block">
+                                	<a href="#">
+                                        <div class="special-image">
+                                            <img src="images\specials-4.jpeg" alt="special-img" class="img-responsive">
+                                            <div class="special-title">
+                                                <h4>Shake</h4>
+                                            </div><!-- end special-title -->
+                                        </div><!-- end special-image -->
+                                    </a>
+                                </div><!-- end special-block -->
+                            </div><!-- end item -->
+                            
+                            <div class="item">
+                                <div class="special-block">
+                                	<a href="#">
+                                        <div class="special-image">
+                                            <img src="images\specials-5.jpeg" alt="special-img" class="img-responsive">
+                                            <div class="special-title">
+                                                <h4>Salad</h4>
+                                            </div><!-- end special-title -->
+                                        </div><!-- end special-image -->
+                                    </a>
+                                </div><!-- end special-block -->
+                            </div><!-- end item -->
+                        </div>
+                        
+                        <div class="butn text-center">
+                        	<a href="blog-listings.html" class="btn btn-lg btn-padding btn-g-border">View More</a>
+                        </div><!-- end butn -->
+                        
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end specials -->
+                    
+                  
+        <!--================ DISH-DEAL ==============-->
+        <section id="dish-deal">
+            <div class="container-fluid no-padding">
+
+                <div class="dish-deal-block">
+                    <div class="dish-deal-image">
+                        <div class="dish-deal-mask">
+                            <img src="images\dish-deal.jpeg" class="img-responsive" alt="Mega Deal">
+                        </div><!-- end deal-dish-mask -->
+                        
+                        <div class="dish-deal-text">
+                            <h3 class="dish-off">40% <br><span>off</span></h3>
+                            <h2>Mega Deal</h2>
+                            
+                            <p class="dish-deal-contain">Chicken Pizza 8 Inch + 1 Sweet Dish Desert + 2.5 Liter Coke Bottle</p>
+                            <p class="dish-deal-price">Price : <span>$76</span> </p>
+                            <a href="#" class="btn btn-w-border">Order Now</a>
+                        </div><!-- end dish-deal-text -->
+                    </div><!-- end dish-deal-images -->
+                </div><!-- end dish-deal-block -->
+
+            </div><!-- end container -->
+        </section><!-- end dish-deal -->
+        
+          
+        <!--================= OUR MENU ==============-->
+        <section id="dish-menu" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                    	<div class="page-heading black">
+                        	<h2>Our <span>Menus</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div><!-- end page-heading -->
+                        
+                        <ul class="nav nav-tabs">
+                        	<li class="active"><a href="#breakfast-dishes" data-toggle="tab">Breakfast</a></li>
+                            <li><a href="#dessert-dishes" data-toggle="tab">Dessert</a></li>
+                            <li><a href="#lunch-dishes" data-toggle="tab">Lunch</a></li>
+                            <li><a href="#dinner-dishes" data-toggle="tab">Dinner</a></li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                                
+                            <div id="breakfast-dishes" class="tab-pane fade in active">
+                            	<ul class="list-unstyled list-inline">
+                                	<li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-breakfast-1.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Breakfast-1<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-breakfast-2.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Breakfast-2<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-breakfast-3.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Breakfast-3<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-breakfast-4.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Breakfast-4<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-breakfast-5.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Breakfast-5<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-breakfast-6.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Breakfast-6<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                </ul>
+                            </div><!-- end breakfast-dishes -->
+                            
+                            <div id="dessert-dishes" class="tab-pane fade">
+                            	<ul class="list-unstyled list-inline">
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dessert-1.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dessert-1<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dessert-2.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dessert-2<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dessert-3.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dessert-3<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dessert-4.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dessert-4<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dessert-5.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dessert-5<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dessert-6.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dessert-6<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                </ul>
+                            </div><!-- end dessert-dishes -->
+                            
+                            <div id="lunch-dishes" class="tab-pane fade">
+                            	<ul class="list-unstyled list-inline">
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-lunch-1.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Lunch-1<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-lunch-2.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Lunch-2<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-lunch-3.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Lunch-3<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-lunch-4.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Lunch-4<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                             
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-lunch-5.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Lunch-5<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-lunch-6.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Lunch-6<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                </ul>
+                            </div><!-- end lunch-dishes -->
+                            
+                            <div id="dinner-dishes" class="tab-pane fade">
+                            	<ul class="list-unstyled list-inline">
+                                	<li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dinner-1.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dinner-1<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+
+                                	<li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dinner-2.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dinner-2<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dinner-3.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dinner-3<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dinner-4.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dinner-4<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dinner-5.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dinner-5<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                    
+                                    <li>
+                                    	<div class="dish-list">
+                                        	<img src="images\dish-dinner-6.jpeg" class="img-responsive" alt="dish-menu">
+                                            <div class="dish-list-text">
+                                            	<h4>Dinner-6<span>$45</span></h4>
+                                                <p>Lorem ipsum, Dolor, Amet, Consectetuer</p>
+                                            </div><!-- end dish-list-text -->
+                                        </div><!-- end dish-list -->
+                                    </li>
+                                </ul>
+                            </div><!-- end dinner-dishes -->
+                            
+                       </div><!-- end tab-content -->
+                   </div><!-- end columns -->
+               </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end dish-menu -->
+        
+        
+        <!--=============== TESTIMONIALS-2 ===============-->
+        <section id="testimonials-2" class="section-padding"> 
+        	<div class="container">
+            	<div class="page-heading black">
+                    <h2>We have Brilliant Record</h2>
+                </div><!-- end page-heading -->
+                        
+        		<div class="row">
+        			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="owl-carousel owl-theme" id="owl-testimonials-2">
+                        
+                            <div class="item">
+                                <div class="review-block">
+									<div class="reviewer-text">
+                                    	<ul class="list-unstyled list-inline star-rating">
+                                        	<li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                        </ul>
+                                        
+                                        <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.		
+                                        <small>Andrew</small>
+                                        </blockquote>
+                                    </div><!-- end reviewer-text -->  
+                                                                       
+                                    <div class="reviewer-img">
+                                        <img src="images\reviewer-1.jpeg" alt="reviewer-image" class="img-circle">
+                                    </div><!-- end reviewer-img -->                                 
+                                </div><!-- end review-block -->
+                            </div><!-- end item -->
+
+                            <div class="item">
+                                <div class="review-block">
+									<div class="reviewer-text">
+                                    	<ul class="list-unstyled list-inline star-rating">
+                                        	<li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                        </ul>
+                                        
+                                        <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.		
+                                        <small>Andrew</small>
+                                        </blockquote>
+                                    </div><!-- end reviewer-text -->
+        
+                                    <div class="reviewer-img">
+                                        <img src="images\reviewer-2.jpeg" alt="reviewer-image" class="img-circle">
+                                    </div><!-- end reviewer-img -->
+                                </div><!-- end review-block -->
+                            </div><!-- end item -->
+
+                            <div class="item">
+                                <div class="review-block">									
+                                    <div class="reviewer-text">
+                                    	<ul class="list-unstyled list-inline star-rating">
+                                        	<li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                            <li><span><i class="fa fa-star"></i></span></li>
+                                        </ul>
+                                        
+                                        <blockquote> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.		
+                                        <small>Andrew</small>
+                                        </blockquote>
+                                    </div><!-- end reviewer-text -->
+
+                                    <div class="reviewer-img">
+                                        <img src="images\reviewer-3.jpeg" alt="reviewer-image" class="img-circle">
+                                    </div><!-- end reviewer-img -->
+                                </div><!-- end review-block -->
+                            </div><!-- end item -->
+                            
+                    	</div><!-- end owl-testimonials-2 -->
+                    </div><!-- end columns -->
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                    	<div class="row">
+                        	<div class="col-xs-12 col-sm-6">
+                                <div class="t-highlight-box">
+                                    <div class="t-highlight-icon">
+                                        <span><i class="fa fa-handshake-o"></i></span>
+                                    </div><!-- end t-highlight-icon -->
+                                    
+                                    <div class="t-highlight-text">
+                                        <h3>112+</h3>
+                                        <p>New Friendships</p>
+                                        <span class="border-shape"></span>
+                                    </div><!-- end t-highlight-text -->
+                                </div><!-- end t-highlight-box -->
+                            </div><!-- end columns -->
+                            
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="t-highlight-box">
+                                    <div class="t-highlight-icon">
+                                        <span><i class="fa fa-star-o"></i></span>
+                                    </div><!-- end t-highlight-icon -->
+                                    
+                                    <div class="t-highlight-text">
+                                        <h3>254+</h3>
+                                        <p>Five Star Ratings</p>
+                                        <span class="border-shape"></span>
+                                    </div><!-- end t-highlight-text -->
+                                </div><!-- end t-highlight-box -->
+                            </div><!-- end columns -->
+                            
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="t-highlight-box">
+                                    <div class="t-highlight-icon">
+                                        <span><i class="fa fa-user-secret"></i></span>
+                                    </div><!-- end t-highlight-icon -->
+                                    
+                                    <div class="t-highlight-text">
+                                        <h3>430+</h3>
+                                        <p>International Guests</p>
+                                        <span class="border-shape"></span>
+                                    </div><!-- end t-highlight-text -->
+                                </div><!-- end t-highlight-box -->
+                            </div><!-- end columns -->
+                            
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="t-highlight-box">
+                                    <div class="t-highlight-icon">
+                                        <span><i class="fa fa-coffee"></i></span>
+                                    </div><!-- end t-highlight-icon -->
+                                    
+                                    <div class="t-highlight-text">
+                                        <h3>745+</h3>
+                                        <p>Breakfast Served</p>
+                                        <span class="border-shape"></span>
+                                    </div><!-- end t-highlight-text -->
+                                </div><!-- end t-highlight-box -->
+                            </div><!-- end columns -->
+                        </div><!-- end row -->
+                    </div><!-- end columns -->
+        		</div><!-- end row -->
+        	</div><!-- end container -->
+        </section><!-- end testimonials-2 -->
+        
+        
+        <!--================ GALLERY-2 ==============-->
+        <section id="gallery-2" class="section-padding"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="page-heading innerpage-heading">
+                            <h2>Our <span>Gallery</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div><!-- end page-heading -->
+                            
+                        <div id="masonry">
+                        
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-1.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-1</h3>
+                                        <a href="images\mas-gallery-1.jpeg" title="image-1" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img">
+                                    <img src="images\mas-gallery-2.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-2</h3>
+                                        <a href="images\mas-gallery-2.jpeg" title="image-2" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                            
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-3.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-3</h3>
+                                        <a href="images\mas-gallery-3.jpeg" title="image-3" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                            
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-4.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-4</h3>
+                                        <a href="images\mas-gallery-4.jpeg" title="image-4" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                            
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-5.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-5</h3>
+                                        <a href="images\mas-gallery-5.jpeg" title="image-5" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                            
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-6.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-6</h3>
+                                        <a href="images\mas-gallery-6.jpeg" title="image-6" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                            
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-7.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-7</h3>
+                                        <a href="images\mas-gallery-7.jpeg" title="image-7" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+                            
+                            <div class="m-gallery-block">
+                                <div class="m-gallery-img ">
+                                    <img src="images\mas-gallery-8.jpeg" alt="gallery-img" class="img-responsive">
+                                    <div class="m-gallery-mask">
+                                        <h3>Gallery-8</h3>
+                                        <a href="images\mas-gallery-8.jpeg" title="image-8" class="with-caption image-link"><span><i class="fa fa-plus"></i></span></a>
+                                    </div><!-- end m-gallery-mask -->
+                                </div><!-- end m-gallery-img -->
+                            </div><!-- end m-gallery-block -->
+
+                        </div><!-- end masonry -->
+                    </div><!-- end columns -->  
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end gallery-2 -->
+        
+        
+        <!--================ BANNER-4 =============-->
+        <section id="banner-4" class="banner-padding">
+            <div class="container text-center">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+                    	<div class="page-heading">
+                            <h2>Make A Reservation</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div><!-- end page-heading -->
+                        
+                        <h4>Contact Us: +123 1234 12345 - info@star-restaurant.com</h4>
+                        <button class="btn btn-yellow" data-toggle="modal" data-target="#reservation-modal">Reserve Now</button>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end banner-4 -->
+        
+        
+        <!--=============== LATEST-BLOG ===============-->
+        <section id="latest-blog" class="section-padding"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                    	
+                        <div class="page-heading">
+                        	<h2>Latest <span>Blog</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div><!-- end page-heading -->
+                        
+                        <div class="row">
+                        	
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            	<div class="latest-block">
+                            		<div class="latest-img">
+                                    	<img src="images\blog-1.jpeg" class="img-responsive" alt="Blog-Image">
+                                    	
+                                        <div class="latest-info">
+                                        	<p><span><i class="fa fa-calendar"></i></span> 29 April, 2017</p>
+                                        	<h2>Lorem ipsum dolor sit amet</h2>
+                                            <a href="blog-details.html">View More</a>
+                                        </div><!-- end latest-info -->
+                                    </div><!-- end latest-img -->
+                                </div><!-- end latest-block -->
+                            </div><!-- end columns -->
+
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            	<div class="latest-block">
+                            		<div class="latest-img">
+                                    	<img src="images\blog-2.jpeg" class="img-responsive" alt="Blog-Image">
+                                    	
+                                        <div class="latest-info">
+                                        	<p><span><i class="fa fa-calendar"></i></span> 29 April, 2017</p>
+                                        	<h2>Lorem ipsum dolor sit amet</h2>
+                                            <a href="blog-details.html">View More</a>
+                                        </div><!-- end latest-info -->
+                                    </div><!-- end latest-img -->
+                                </div><!-- end latest-block -->
+                            </div><!-- end columns -->
+
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            	<div class="latest-block">
+                            		<div class="latest-img">
+                                    	<img src="images\blog-3.jpeg" class="img-responsive" alt="Blog-Image">
+                                    	
+                                        <div class="latest-info">
+                                        	<p><span><i class="fa fa-calendar"></i></span> 29 April, 2017</p>
+                                        	<h2>Lorem ipsum dolor sit amet</h2>
+                                            <a href="blog-details.html">View More</a>
+                                        </div><!-- end latest-info -->
+                                    </div><!-- end latest-img -->
+                                </div><!-- end latest-block -->
+                            </div><!-- end columns -->
+                            
+                        </div><!-- end row -->
+                        
+                        <div class="butn text-center">
+                        	<a href="blog-listings.html" class="btn btn-lg btn-padding btn-g-border">View More</a>
+                        </div><!-- end butn -->
+                        
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end blog -->
+        
+        
+        <!--============ RESTAURANT FOOTER =============-->
+        <section id="rstnt-footer" class="section-padding"> 
+            <div class="container text-center">
+            	<div class="rstnt-footer-content">
+                    <h3 class="rstnt-name"><span>Star</span>Restaurant</h3>
+                    <ul class="rstnt-info list-unstyled">
+                        <li>Street # 3, Block D, Lorem ipsum dolor sit amet, California.</li>
+                        <li>info@star-restaurant.com</li>
+                        <li>+123 1234 123456</li>
+                        <li class="rstnt-time">Mon - Fri: 08:30 am - 10:30 pm </li>
+                        <li class="rstnt-time">Sat - Sun: 08:30 am - 12:30 pm </li>
+                    </ul>
+                    
+                    <ul class="rstnt-social list-unstyled list-inline">
+                        <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-pinterest"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-dribbble"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-flickr"></i></span></a></li>
+                    </ul>
+                    
+                    <p class="rstnt-copyright">Copyright © 2017 <a href="#">StarRestaurant</a>. All rights reserved.</p>
+                    <span class="border-shape"></span>
+                </div><!-- end rstnt-footer-conten -->
+            </div><!-- end container -->
+        </section><!-- end rstnt-footer -->
+        
+        
+        <!--======================== RESERVATION-MODAL ========================-->
+        <div id="reservation-modal" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Reserve a Table</h3>
+                    </div><!-- end modal-header -->
+                    
+                    <div class="modal-body">
+                        <form>
+                        	<div class="row">
+                            	<div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name">
+                                    </div><!-- end form-group -->
+                                </div>
+                                
+                                <div class="col-xs-12 col-sm-6">   
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name">
+                                    </div><!-- end form-group -->
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                            	<div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div><!-- end form-group -->
+                                </div>
+                                
+                                <div class="col-xs-12 col-sm-6">   
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Phone">
+                                    </div><!-- end form-group -->
+                                </div>
+                            </div>
+							
+                            <div class="row">
+                            	<div class="col-xs-12 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Date">
+                                    </div><!-- end form-group -->
+                                </div>
+                                
+                                <div class="col-xs-12 col-sm-6">   
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Time">
+                                    </div><!-- end form-group -->
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="No. of Persons">
+                            </div><!-- end form-group -->
+                            
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                            </div><!-- end form-group -->
+                            
+                            <button class="btn btn-yellow btn-lg">Reserve Now</button>
+                        </form>
+                    </div><!-- end modal-bpdy -->
+                </div><!-- end modal-content -->
+            </div><!-- end modal-dialog -->
+        </div><!-- end reservation-modal -->
+        
+        
+        <!-- Page Scripts Starts -->
+        <script src="js\jquery.min.js"></script>
+        <script src="js\jquery.colorpanel.js"></script>
+        <script src="js\jquery.magnific-popup.min.js"></script>
+        <script src="js\bootstrap.min.js"></script>
+        <script src="js\jquery.flexslider.js"></script>
+        <script src="js\owl.carousel.min.js"></script>
+        <script src="js\custom-navigation.js"></script>
+        <script src="js\custom-flex.js"></script>
+        <script src="js\custom-owl.js"></script>
+        <script src="js\custom-gallery.js"></script>
+        <!-- Page Scripts Ends -->
+        
+	</body>
+</html>

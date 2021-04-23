@@ -1,0 +1,105 @@
+ <!-- Modal Thêm mới Nhân viên , chỉnh sửa nhân viên -->
+ <div class="box-body">
+        <div class="modal fade" id="modal-addEmployee-updateEmployee">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Thông Tin Nhân Viên</h4>
+                        <div class="overlay text-center">
+                            <i class="fa fa-spinner fa-spin fa-3x fa-fw text-blue" id="refreshAnnimationEmployee"></i>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form id="employeeInfo" method="POST">
+                                <input type="hidden" value="addEmployee">
+                            <div class="row">
+                                    <div class="form-group col-sm-6">
+                                            <label for="nameEmployee">Tên Nhân Viên:</label>
+                                            <input type="text" class="form-control" id="nameEmployee" name="nameEmployee">
+                                        </div>
+                                        <div class="form-group col-sm-3">
+                                                <label for="codeEmployee">Code:</label>
+                                                <input type="text"class="form-control" id="codeEmployee"
+                                                    name="codeEmployee">
+                                            </div>
+                                          
+                                                <div class="form-group col-sm-3">
+                                                        <label for="gender">Giới tính:</label>
+                                                        <select name="gender" id="gender" class="form-control">
+                                                                <option value="Nam">Nam</option>
+                                                                <option value="Nữ">Nữ</option>
+                                                            </select>
+                                                    </div>
+                            </div>
+
+                            <div class="row">
+                                    <div class="form-group col-sm-4">
+                                            <label for="phoneNumber">SĐT:</label>
+                                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                                <label for="idCardNo">CMND:</label>
+                                                <input type="text"class="form-control" id="idCardNo"
+                                                    name="idCardNo">
+                                            </div>
+                                          
+                                                <div class="form-group col-sm-4">
+                                                        <label for="yearOfBirthEmployee">Năm Sinh:</label>
+                                                        <input type="text" class="form-control" id="yearOfBirthEmployee"
+                                                        name="yearOfBirthEmployee">
+                                                    </div>
+                            </div>
+
+                            <div class="row">
+                                    <div class="form-group col-sm-12">
+                                            <label for="address">Địa Chỉ:</label>
+                                            <input type="text" class="form-control" id="address" name="address">
+                                        </div>
+                            </div>
+                            <div class="row">
+                                    <div class="form-group col-sm-4">
+                                            <label for="shift">Ca Làm:</label>
+                                            <select name="shift" id="shift" class="form-control">
+                                                    <option value="Cả Ngày">Cả ngày</option>
+                                                    <option value="Sáng">Sáng</option>
+                                                    <option value="Chiều">Chiều</option>
+                                                    <option value="Tối">Tối</option>
+                                                </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                                <label for="position">Chức Vụ:</label>
+                                                <select name="position" id="position" class="form-control">
+                                                        <option value="Lễ Tân">Lễ Tân</option>
+                                                        <option value="Phục Vụ">Phục Vụ</option>
+                                                        <option value="Kiểm Kho">Kiểm Kho</option>
+                                                        <option value="Vệ Sinh Phòng">Vệ Sinh Phòng</option>
+                                                        <option value="Bảo Vệ">Bảo Vệ</option>
+                                                    </select>
+                                            </div>
+                                          
+                                                <div class="form-group col-sm-4">
+                                                        <label for="dayToWork">Ngày Vào Làm:</label>
+                                                        <input type="text" class="form-control" id="dayToWork"
+                                                        name="dayToWork">
+                                                        
+                                                    </div>
+                            </div>
+    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary pull-left" id="close-employee" data-dismiss="modal">Đóng</button>
+                        <label id="resultEmployee"class="margin-r-5"></label>
+                        <button type="button" class="btn btn-primary" id="add-or-update-employee">Lưu</button>
+                    </div>
+                    
+    
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </div>

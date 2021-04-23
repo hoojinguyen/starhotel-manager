@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Data API</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Data API</h1>
+        <div>Customer Data Management System</div>
+		<br/>
+		<pre style="text-align: justify; font-size: 12px">
+		
+			To get Token (JWT). 
+
+			1. <strong>(POST) /api/tenant : Get tenant info with Token </strong>
+			Body data example:
+			{
+				"username": "romi",
+				"password": "romiadmintest"
+			}
+			Return data:
+			{
+			"name": "Romi Technologi",
+			"email": "admin@romi.com",
+			"token": "<span style="font-size: 8px">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDcxODE4OTYsImV4cCI6MTU0NzE4OTA5NiwianRpIjoiVU9HY09zN0tMVGpcL3RjVVJMc3cxU3c9PSIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdCIsInRlbmFudCI6IjE0OGM4NThhLTE0NWItMTFlOS05ZTkzLTAyNDJhYzExMDAwNyIsInVzZXJuYW1lIjoiZ3NpIn0.wiIYkP0BAHTlKSjqrEOlkMjI-wDc0R5FqClX5hQNEcY</span>"
+			}
+			Include token info in header requests.
+			Key=Authorization
+			Value=Token &lt;token value&gt;
+
+			2. <strong>(POST) /api/taxbill/{searchBy: - string (eg: billno, name, address)}/{taxYear - integer} : Search by information. </strong>
+			Header data {
+				Key=Authorization
+				Value=Token &lt;token value&gt;
+			}
+			Body data example:
+			{
+				"tax_year": 2019,
+				"address": "190",
+				"bill_no": "0000001",
+				"name": "franklin",
+			}
+
+		</pre>
+    </body>
+</html>

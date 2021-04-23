@@ -1,0 +1,30 @@
+<script id="guestRowTemplate" type="text/html">
+    <tr>
+        <td>[guest_name]</td>
+        <td>[guest_idCardNo]</td>
+        <td>[guest_phoneNumber]</td>
+        <td>[guest_yearOfBirth]</td>
+        <td>[guest_address]</td>
+
+        
+        <td class="text-center">
+            <button class=" edit-guest 
+                        btn 
+                        btn-warning 
+                        btn-xs" data-toggle="modal" data-target="#modal-add-update" data-guest-id="[guest_id]"
+                title="Sửa thông tin khánh hàng">
+                <span class="fa fa-wrench"></span>
+                </button>
+            <button class=" btn
+                        btn-danger 
+                        btn-xs 
+                        btn-danger 
+                        delete-guest 
+                        " data-toggle="modal" data-target="#modal-del" data-guest-id="[guest_id]"
+                title="Xóa thông tin khánh hàng">
+                <span class="fa fa-trash-o"></span>
+                </button>   
+            </button>
+        </td>
+    </tr>
+    </script>

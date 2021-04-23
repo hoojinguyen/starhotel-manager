@@ -1,0 +1,195 @@
+{% extends "/client/homepage.html" %}
+{% block content %}
+
+<!--============= PAGE-COVER =============-->
+<section class="page-cover" id="room-listing-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="page-title">Danh Sách Phòng</h1>
+            </div><!-- end columns -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end page-cover -->
+</div><!-- end home-container -->
+
+<!--=============INNERPAGE-WRAPPER ===========-->
+<section id="room-listings" class="innerpage-wrapper">
+
+    <div id="room-listing-blocks" class="innerpage-section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul id="room-list" class="list-unstyled">
+
+                        <!-- Room Single -->
+                        <li id="room-list-3">
+                            <div class="room-list-block">
+                                <div class="row">
+                                    <div
+                                        class="col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7 col-lg-offset-5 col-lg-7 room-text">
+                                        <div class="room-info">
+                                            <h1 class="room-name">{{arraySingleRoom.roomType}}</h1>
+                                            {% if arraySingleRoom.numRoom == 0 %}
+                                            <span class="room-position"
+                                                style="text-decoration: line-through; color:red">Hết phòng</span>
+                                            {% else %}
+                                            <span class="room-position">Còn {{ arraySingleRoom.numRoom }} phòng
+                                                trống</span>
+
+                                            {% endif %}
+                                            <ul class="list-inline list-unstyled room-features">
+                                                <li><span data-toggle="tooltip" title="Miễn phí Wifi"><i
+                                                            class="fa fa-wifi"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Được dọn dẹp phòng mỗi sáng"><i
+                                                            class="fa fa-leaf"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Miễn phí bữa sáng"><i
+                                                            class="fa fa-cutlery"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Có màn hình LCD lớn"><i
+                                                            class="fa fa-television"></i></span></li>
+
+                                            </ul>
+                                            <p>Giá ngày thường: <span class="text-bold">
+                                                    {{arraySingleRoom.priceDayDefault}}/ ngày</span>
+                                            </p>
+                                            <p>Giá ngày cuối tuần: <span class="text-bold">
+                                                    {{arraySingleRoom.priceDayWeekend}}/ ngày</span>
+                                            </p>
+
+                                            {% if arraySingleRoom.numRoom != 0 %}
+                                            <a href="" class="btn btn-lg btn-yellow" id="btnBookSingleRoom"
+                                                data-room-id='{{ arraySingleRoom.idRoom  }}' data-room-type="{{arraySingleRoom.roomType}}">Đặt phòng ngay</a>
+                                            {% endif %}
+
+
+                                        </div><!-- end room-info -->
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+                            </div><!-- end room-list-block -->
+                        </li><!-- end list-item -->
+                        <!-- End Room Single -->
+
+                        <!-- Room Double -->
+                        <li id="room-list-1">
+                            <div class="room-list-block">
+                                <div class="row">
+                                    <div
+                                        class="col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7 col-lg-offset-5 col-lg-7 room-text">
+                                        <div class="room-info">
+                                            <h1 class="room-name">{{arrayDoubleRoom.roomType}}</h1>
+
+                                            {% if arrayDoubleRoom.numRoom == 0 %}
+                                            <span class="room-position"
+                                                style="text-decoration: line-through; color:red">Hết phòng</span>
+                                            {% else %}
+                                            <span class="room-position">Còn {{ arrayDoubleRoom.numRoom }} phòng
+                                                trống</span>
+
+                                            {% endif %}
+
+                                            <ul class="list-inline list-unstyled room-features">
+                                                <li><span data-toggle="tooltip" title="Miễn phí Wifi"><i
+                                                            class="fa fa-wifi"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Được dọn dẹp phòng mỗi sáng"><i
+                                                            class="fa fa-leaf"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Miễn phí bữa sáng"><i
+                                                            class="fa fa-cutlery"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Có màn hình LCD lớn"><i
+                                                            class="fa fa-television"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Có bộ Play Station"><i
+                                                            class="fa fa-futbol-o"></i></span></li>
+
+                                            </ul>
+                                            <p>Giá ngày thường: <span class="text-bold">
+                                                    {{arrayDoubleRoom.priceDayDefault}}/ ngày</span>
+                                            </p>
+                                            <p>Giá ngày cuối tuần: <span class="text-bold">
+                                                    {{arrayDoubleRoom.priceDayWeekend}}/ ngày</span>
+                                            </p>
+
+                                            {% if arrayDoubleRoom.numRoom != 0 %}
+                                            <a href="" class="btn btn-lg btn-yellow" id="btnBookDoubleRoom"
+                                                data-room-id='{{ arrayDoubleRoom.idRoom  }}' data-room-type='{{arrayDoubleRoom.roomType}}'>Đặt phòng ngay</a>
+
+                                            {% endif %}
+
+
+
+                                        </div><!-- end room-info -->
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+                            </div><!-- end room-list-block -->
+                        </li><!-- end list-item -->
+                        <!-- End Room Double -->
+
+                        <!-- Room Vip -->
+                        <li id="room-list-2">
+                            <div class="room-list-block">
+                                <div class="row">
+                                    <div
+                                        class="col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7 col-lg-offset-5 col-lg-7 room-text">
+                                        <div class="room-info">
+                                            <h1 class="room-name">{{ arrayVipRoom.roomType }}</h1>
+
+                                            {% if arrayVipRoom.numRoom == 0 %}
+                                            <span class="room-position"
+                                                style="text-decoration: line-through; color:red">Hết phòng</span>
+                                            {% else %}
+
+                                            <span class="room-position">Còn {{ arrayVipRoom.numRoom }} phòng
+                                                trống</span>
+                                            {% endif %}
+                                            <ul class="list-inline list-unstyled room-features">
+                                                <li><span data-toggle="tooltip" title="Được đón bằng taxi"><i
+                                                            class="fa fa-taxi"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Miễn phí Wifi"><i
+                                                            class="fa fa-wifi"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Được dọn dẹp phòng mỗi sáng"><i
+                                                            class="fa fa-leaf"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Miễn phí bữa sáng"><i
+                                                            class="fa fa-cutlery"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Có màn hình LCD lớn"><i
+                                                            class="fa fa-television"></i></span></li>
+                                                <li><span data-toggle="tooltip" title="Có bộ Play Station"><i
+                                                            class="fa fa-futbol-o"></i></span></li>
+
+                                            </ul>
+                                            <p>Giá ngày thường: <span class="text-bold">
+                                                    {{arrayVipRoom.priceDayDefault}}/ ngày</span>
+                                            </p>
+                                            <p>Giá ngày cuối tuần: <span class="text-bold">
+                                                    {{arrayVipRoom.priceDayWeekend}}/ ngày</span>
+                                            </p>
+
+                                            {% if arrayVipRoom.numRoom != 0 %}
+                                            <a href="bookroom" class="btn btn-lg btn-yellow" id="btnBookVipRoom"
+                                                data-room-id='{{ arrayVipRoom.idRoom  }}' data-room-type="{{ arrayVipRoom.roomType }}">Đặt phòng ngay</a>
+
+                                            {% endif %}
+
+
+                                        </div><!-- end room-info -->
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+                            </div><!-- end room-list-block -->
+                        </li><!-- end list-item -->
+                        <!-- End Room Vip -->
+
+                    </ul>
+
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end room-listing-blocks -->
+
+
+
+</section><!-- end innerpage-wrapper -->
+
+
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/client/roomlistings.js"></script>
+{% endblock %}

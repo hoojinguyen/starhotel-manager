@@ -1,0 +1,186 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+<!-- Danh Sach Tang -->
+<div class="row">
+	<div class="col-xs-5 col-md-5">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title text-bold">Danh Sách Tầng</h3>
+				<button type="button" class="btn btn-sm btn-primary pull-right btn-addfloor" id="btn-add-floor"
+					data-toggle="modal" data-target="#modal-addFloor-updateFloor">
+					Thêm Mới Tầng
+				</button>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body no-padding">
+				<table class="table table-bordered text-center" id="floors">
+					<thead>
+						<tr>
+							<th>Mã Tầng</th>
+							<th>Tầng</th>
+							<th>Tình trạng</th>
+							<!-- <th>Ngày cập nhật</th> -->
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for floor in floors %}
+						<tr>
+							<td>{{ floor.code}}</td>
+							<td>{{ floor.name }}</td>
+							{% if floor.active == 1 %}
+							<td>Hoạt động</td>
+							{% else %}
+							<td>Ngưng hoạt động</td>
+							{% endif %}
+							<td class="text-center">
+								<button type="button" class="btn btn-warning btn-xs edit-floor" 
+									data-toggle="modal" data-target="#modal-addFloor-updateFloor"
+									data-floor-id="{{ floor.id }}"><span class="fa fa-wrench"></span></button>
+								<button type="button" class="btn btn-danger btn-xs delete-floor" data-toggle="modal"
+									data-target="#modal-del-floor" data-floor-id="{{ floor.id }}" data-floor-name="{{ floor.name }}">&nbsp;<span
+										class="fa fa-trash-o"></span></button>
+
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+
+	<div class="col-xs-7 col-md-7">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title text-bold">Danh Sách Loại Phòng</h3>
+				<button type="button" class="btn btn-sm btn-primary pull-right" id="btn-add-roomtype"
+					data-toggle="modal" data-target="#modal-addRoomType-updateRoomType">
+					Thêm Mới Loại Phòng
+				</button>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body no-padding">
+				<table class="table table-bordered text-center" id="roomTypes">
+					<thead>
+						<tr>
+	
+							<th>Mã loại phòng</th>
+							<th>Loại Phòng</th>
+							<th>Số người ở tối đa</th>
+							<th>Tình Trạng</th>
+							
+							<!-- <th>Ngày cập nhật</th> -->
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for roomType in roomTypes %}
+						<tr>
+						
+							<td>{{ roomType.code}}</td>
+							<td >{{ roomType.name }}</td>
+							<td>{{ roomType.maxPeople }} người</td>
+							{% if roomType.active == 1 %}
+							<td>Hoạt động</td>
+							{% else %}
+							<td>Ngưng hoạt động</td>
+							{% endif %}
+							
+							<td>
+								<button type="button" class="btn btn-warning btn-xs edit-roomtype"  data-roomtype-id="{{ roomType.id }}"
+									data-toggle="modal" data-target="#modal-addRoomType-updateRoomType"><span
+										class="fa fa-wrench"></span>  </button>
+								<button type="button" class="btn btn-danger btn-xs del-roomtype" data-roomtype-id="{{ roomType.id }}" data-roomtype-name="{{ roomType.name }}"
+									data-toggle="modal" data-target="#modal-del-roomtype"><span
+										class="fa fa-trash-o"></span> </button>
+							</td>
+						</tr>
+						{% endfor %}
+
+
+					</tbody>
+				</table>
+			</div>
+			<!-- /.box-body -->
+		</div>
+
+	</div>
+</div>
+
+<!-- Danh Sach Phong -->
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title text-bold">Danh Sách Phòng</h3>
+				<button type="button" class="btn btn-sm btn-primary pull-right btn-addRoom" id="btn-add-room"
+					data-toggle="modal" data-target="#modal-addRoom-updateRoom">
+					Thêm Mới Phòng
+				</button>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body no-padding">
+				<table class="table table-hover text-center" id="rooms">
+					<thead>
+						<tr>
+
+							
+							<th>Phòng/Số</th>
+							<th>Khu Vực</th>
+							<th>Loại Phòng</th>
+						
+						
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for room in rooms %}
+						<tr>
+							<td >{{ room.nameRoom }}</td>
+							<td>{{ room.floor}}</td>
+							<td>{{ room.roomType }} </td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs edit-room" data-room-id="{{room.id}}"
+									data-toggle="modal" data-target="#modal-addRoom-updateRoom" ><span
+										class="fa fa-wrench"></span>  </button>
+								<button type="button" class="btn btn-danger btn-xs del-room" data-room-id="{{ room.id }}" data-room-name="{{ room.nameRoom }}"
+								data-toggle="modal" data-target="#modal-del-room"><span class="fa fa-trash-o"></span> </button>
+							</td>
+						</tr>
+						{% endfor %}
+
+
+					</tbody>
+
+
+				</table>
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+
+{% include 'admin/room/floor-edit-modal.html' %}
+{% include 'admin/room/floor-delete-modal.html' %}
+{% include 'admin/room/room-type-edit-modal.html' %}
+{% include 'admin/room/room-type-delete-modal.html' %}
+{% include 'admin/room/room-edit-modal.html' %}
+{% include 'admin/room/room-delete-modal.html' %}
+{% endblock %}
+
+{% block pageJavascript %}
+<script type="text/javascript" src="/assets/js/admin/floor.js"></script>
+<script type="text/javascript" src="/assets/js/admin/room_type.js"></script>
+<script type="text/javascript" src="/assets/js/admin/room.js"></script>
+{% endblock %}

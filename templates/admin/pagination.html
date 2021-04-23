@@ -1,0 +1,20 @@
+{% if pagination.needed %}
+<div id="pagination-container" class="col-sm-4 text-right">
+	<input type="hidden" id="currentPageIndex" name="currentPageIndex" value="0">
+	<nav id="pagination">
+		<ul class="pagination m-0">
+			<li class="page-item paginate_button previous disabled"><a id="page-item-before" href="#" class="page-link"
+					data-page="-1">Trước</a></li>
+			{% for i in 1..pagination.lastpage %}
+			<li class="page-item{% if i == pagination.page +1 %} active{% endif %}"><a class="page-link" href="#"
+					data-page="{{ i-1 }}">{{ i }}</a></li>
+			{% endfor %}
+			{% if pagination.lastpage == 1 %}
+				<li class="page-item disabled"><a id="page-item-next" href="#" class="page-link" data-page="0">Tiếp</a></li>			
+			{% else %}
+				<li class="page-item"><a id="page-item-next" href="#" class="page-link" data-page="0">Tiếp</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+</div>
+{% endif %}

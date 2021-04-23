@@ -1,0 +1,289 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+<!-- Content -->
+<div class="box devices-table">
+	<div class="box-header">
+		<h3 class="box-title text-bold">Danh Sách thiết bị</h3>
+		<button type="button" class="btn btn-primary pull-right" id="btn-add-device" data-toggle="modal"
+			data-target="#modal-addDevice">
+			Thêm thiết bị
+		</button>
+	</div>
+	<!-- /.box-header -->
+	<div class="box-body no-padding">
+		<table class="table table-bordered text-center" id="devices">
+			<thead>
+				<tr>
+					<th>Mã thiết bị</th>
+					<th>Tên thiết bị</th>
+					<th>Đơn giá</th>
+					<th>Ngày nhập</th>
+					<th>Thao tác</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for device in devices %}
+				<tr>
+					<td>{{ device.code }}</td>
+					<td>{{ device.name }}</td>
+					<td>{{device.price}}</td>
+					<td>{{ device.importDate }}</td>
+					<td>
+						<button type="button" class="btn btn-warning btn-xs edit-button-device" data-id="{{device.id}}"
+							data-toggle="modal" data-target="#modal-addDevice"><span class="fa fa-wrench"></span>
+						</button>
+						<button type="button" class="btn btn-danger btn-xs del-button-device" data-toggle="modal"
+							data-id="{{device.id}}" data-target="#modal-del-device"><span
+								class="fa fa-trash-o"></span></button></td>
+
+				</tr>
+				{% endfor %}
+
+
+			</tbody>
+		</table>
+	</div>
+	<!-- /.box-body -->
+	<!-- <div class="overlay">
+		<i class="fa fa-refresh fa-spin"></i>
+	</div> -->
+</div>
+
+<div class="box deviceInRoom-table">
+	<div class="box-header">
+		<h3 class="box-title text-bold">Danh Sách thiết bị trong phòng</h3>
+		<div class="input-group col-md-5" style="margin-top: 30px;">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-primary btn-flat dropdown-toggle" id="btn-roomType"
+					data-toggle="dropdown" aria-expanded="false">Phòng
+					<span class="fa fa-caret-down"></span></button>
+				<ul class="dropdown-menu">
+					{% for room in rooms %}
+					<li><a onclick="loadDeviceInRoom({{room.id}})">{{room.name}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<!-- /btn-group -->
+			<input type="text" class="form-control text-center" id="room-display" data-room="1"
+				value="PHÒNG 101">
+		</div>
+		<div class="pull-right">
+			<button type="button" class="btn btn-primary" id="btn-add-deviceInRoom" data-toggle="modal"
+				data-target="#modal-add-deviceInRoom">
+				Thêm thiết bị
+			</button>
+		</div>
+
+	</div>
+	<!-- /.box-header -->
+	<div class="box-body no-padding">
+		<table class="table table-bordered text-center" id="deviceInRoom">
+			<thead>
+				<tr>
+					<th>Mã thiết bị</th>
+					<th>Tên thiết bị</th>
+					<th>Số lượng</th>
+					<th>Thao tác</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for device in devicesInRoom %}
+				<tr>
+					<td>{{ device.code }}</td>
+					<td>{{ device.name }}</td>
+					<td>{{ device.quantity }}</td>
+					<td>
+						<button type="button" class="btn btn-warning btn-xs edit-button-deviceInRoom"
+							data-function="edit" data-id="{{device.id}}"><span class="fa fa-wrench"></span>
+						</button>
+						<button type="button" class="btn btn-danger btn-xs del-button-deviceInRoom" data-toggle="modal"
+							data-target="#modal-del-deviceInRoom" data-id="{{device.id}}"><span
+								class="fa fa-trash-o"></span></button>
+					</td>
+
+				</tr>
+				{% endfor %}
+
+
+			</tbody>
+		</table>
+	</div>
+	<!-- /.box-body -->
+	<!-- <div class="overlay">
+		<i class="fa fa-refresh fa-spin"></i>
+	</div> -->
+</div>
+
+<!-- END Content -->
+
+<!-- Modal Thêm - Sửa thiết bị -->
+
+<div class="box-body modal-addDevice">
+	<div class="modal fade" id="modal-addDevice">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Thông tin thiết bị</h4>
+				</div>
+				<div class="modal-body">
+					<form id="deviceInfo" method="POST">
+						<input type="hidden" value="addDevice">
+						<div class="form-group">
+							<label for="nameDevice">Tên thiết bị:</label>
+							<input type="text" class="form-control" id="nameDevice" name="name"
+								placeholder="Vd: Máy lạnh">
+						</div>
+						<div class="form-group">
+							<label for="codeDevice">Mã thiết bị:</label>
+							<input type="text" class="form-control" id="codeDevice" name="code" placeholder="Vd: ML02">
+						</div>
+						<div class="form-group">
+							<label for="price">Giá:</label>
+							<input type="number" class="form-control" id="price" name="price" placeholder="Vd: 400000">
+						</div>
+						<div class="form-group">
+							<label for="importDate">Ngày nhập:</label>
+							<input type="text" class="form-control" id="importDate" name="importDate"
+								placeholder="Vd: 27/02/2019">
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary pull-left" id="close-device"
+						data-dismiss="modal">Đóng</button>
+					<label id="resultDevice" class="margin-r-5"></label>
+					<button type="button" class="btn btn-primary" id="add-or-update-device">Lưu</button>
+				</div>
+
+			</div>
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin"></i>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+</div>
+<!-- END Modal Thêm - Sửa thiết bị -->
+
+<!-- Xóa  thiết bị -->
+<div class="box box-solid">
+	<div class="modal fade" id="modal-del-device">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Cảnh báo</h4>
+				</div>
+				<div class="modal-body">
+					Bạn có chắc chắn muốn xóa thiết bị này ?
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Không</button>
+					<label id="resultDelService"></label>
+					<button name="ok" id="confirm-del-device" class="btn btn-danger">Có</button>
+
+				</div>
+
+
+			</div>
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin"></i>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ENd xóa thiết bị -->
+
+<!-- Xóa thiết bị trong phòng -->
+<div class="box box-solid">
+	<div class="modal fade" id="modal-del-deviceInRoom">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Cảnh báo</h4>
+				</div>
+				<div class="modal-body">
+					Bạn có chắc chắn muốn xóa thiết bị này ?
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Không</button>
+					<label id="resultDelService"></label>
+					<button name="ok" id="confirm-del-deviceInRoom" class="btn btn-danger">Có</button>
+
+				</div>
+			</div>
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin"></i>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Xóa thiết bị trong phòng -->
+
+<!--Thêm thiết bị trong phòng -->
+
+<div class="box box-solid">
+	<div class="modal fade" id="modal-add-deviceInRoom">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Thêm thiết bị</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-xs-8">
+							<label for="list-Device">Chọn thiết bị</label>
+							<select data-id="1" class="form-control" data-id="1" name="devices" id="list-Device">
+							</select>
+						</div>
+						<div class="form-group col-xs-4">
+							<label for="add-quantity">Số lượng</label>
+							<input class="form-control" type="number" id="add-quantity" value="0">
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
+					<label id="resultDelService"></label>
+					<button name="ok" id="confirm-add-deviceInRoom" class="btn btn-danger">Thêm</button>
+
+				</div>
+			</div>
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin"></i>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END Thêm thiết bị trong phòng -->
+
+
+<!-- Content -->
+
+
+{% endblock %}
+
+{% block pageJavascript %}
+<script src="/assets/js/device/device.js"></script>
+{% endblock %}

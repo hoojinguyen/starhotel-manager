@@ -1,0 +1,26 @@
+<!-- Xóa tầng -->
+<div class="box-body">
+	<div class="modal fade" id="modal-del-floor">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Cảnh báo</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="deleteFloorId" name="deleteFloorId" value="">
+					Bạn có chắc chắn muốn xóa <span class="text-bold text-red text-uppercase info-del-floor"></span>?
+				</div>
+				<div class="modal-footer">
+				
+					<label id="result-floor" class="pull-left text-red hidden"></label>
+					<button type="button" class="btn btn-default m-r-10" data-dismiss="modal">Không</button>
+					<button  id="confirm-del-floor"" class="btn btn-danger">Có</button>
+				</div>
+			</div>
+			<div class="overlay">
+				<i class="fa fa-refresh fa-spin fa-refreshcenter"></i>
+			</div>
+		</div>
+	</div>
+</div>

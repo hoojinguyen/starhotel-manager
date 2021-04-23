@@ -1,0 +1,143 @@
+{% extends "/admin/page.html" %}
+{% block pageHeader %}
+{{ pageHeader }}
+{% endblock %}
+{% block pageDescription %}
+{{ pageDescription }}
+{% endblock %}
+{% block content %}
+
+<div class="row" style="margin-top:60px;">
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="fa fa-bed"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">TỔNG SỐ PHÒNG TRỐNG</span>
+        {% if  numEmptyRoom == "" %}
+        <span class="info-box-number">0 Phòng</span>
+        {% endif %}
+        {% if  numEmptyRoom  != "" %}
+        <span class="info-box-number">{{ numEmptyRoom}} Phòng</span>
+        {% endif %}
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="fa fa-user"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">SỐ KHÁCH ĐANG LƯU TRÚ</span>
+        {% if  numGuestOrder == "" %}
+        <span class="info-box-number">0 Khách</span>
+        {% endif %}
+        {% if  numGuestOrder  != "" %}
+        <span class="info-box-number">{{ numGuestOrder}} Khách</span>
+        {% endif %}
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+  <!-- fix for small devices only -->
+  <div class="clearfix visible-sm-block"></div>
+
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-yellow"><i class="fa fa-user-secret"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">SỐ KHÁCH LƯU TRÚ QUA ĐÊM</span>
+        {% if  numGuestOverNight == "" %}
+        <span class="info-box-number">0 Khách</span>
+        {% endif %}
+        {% if  numGuestOverNight  != "" %}
+        <span class="info-box-number">{{ numGuestOverNight}} Khách</span>
+        {% endif %}
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-aqua"><i class="ion ion-ios-people-outline"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">SỐ KHÁCH LƯU TRÚ THEO NGÀY</span>
+        {% if  numGuestDay == "" %}
+        <span class="info-box-number">0 Khách</span>
+        {% endif %}
+        {% if  numGuestDay  != "" %}
+        <span class="info-box-number">{{ numGuestDay}} Khách</span>
+        {% endif %}
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+</div>
+<div class="row" style="margin-top:30px;">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title text-bold">Danh sách Đặt phòng ngày {{ currentDay }}</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th>Mã đặt phòng</th>
+              <th>Tên đại diện</th>
+              <th>Số khách</th>
+              <th>Phòng</th>
+              <th>Loại phòng</th>
+              <th>Thời gian đặt phòng</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if infoGuestRooms == 0 %}
+            <tr>
+              <td class="text-center" colspan="6"> Chưa có dữ liệu ... </td>
+            </tr>
+            {% else %}
+            {% for infoGuestRoom in infoGuestRooms %}
+            <tr>
+              <td>{{ infoGuestRoom.bookingCode }}</td>
+              <td>{{ infoGuestRoom.nameContact }}</td>
+              <td>{{ infoGuestRoom.numGuest }}</td>
+              <td>{{ infoGuestRoom.nameRoom }}</td>
+              <td>{{ infoGuestRoom.roomType }}</td>
+              <td class="text-bold">{{ infoGuestRoom.dayBooking }} </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+
+
+          </tbody>
+
+
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

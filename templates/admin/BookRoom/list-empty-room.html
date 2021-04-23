@@ -1,0 +1,64 @@
+<div class="box-body">
+	<div class="modal modal-default fade" id="modal-findEmptyRoom">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+					<h3 class="modal-title" id="addGuestTitle">Danh sách phòng trống:</h3>
+				</div>
+				<div class="modal-body" id="modalFindEmtpyRoom">
+
+
+					<!-- Table row -->
+					<div class="row">
+						<div class="col-xs-12 table-responsive">
+							<table class="table table-striped text-center" id="tableRoomEmpty">
+
+								<thead>
+									<tr>
+										<th>Phòng</th>
+										<th>Loại phòng</th>
+										<th>Đặt phòng</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="7" class="text-center">
+											<p id="noData"> Chưa có dữ liệu ... </p>
+										</td>
+
+									</tr>
+								</tbody>
+
+
+							</table>
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<div class="modal-footer">
+
+					<!-- <label id="lblOrderSuccess" class="margin-r-5"></label> -->
+					<div class="overlay text-center">
+						<i class="fa fa-spinner fa-spin fa-3x fa-fw" id="refreshAnnimationService"></i>
+					</div>
+					<button type="button" class="btn btn-primary pull-right" id="btnSaveChoseEmptyRoom">Lưu</button>
+					<button type="button" class="btn btn-default pull-right margin-r-5"
+						data-dismiss="modal">Đóng</button>
+						<input type="text" class="hidden" id="inputDayCheckin">
+						<input type="text" class="hidden" id="inputDayCheckout">
+						<input type="text" class="hidden" id="inputIdBookingRoom">
+						<input type="text" class="hidden" id="inputIdBill">
+						<input type="text" class="hidden" id="idRoomOld">
+						<input type="text" class="hidden" id="idRoomTypeOld">
+		
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+</div>
