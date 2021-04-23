@@ -1,14 +1,14 @@
 # Starhotel manager web application
 
 
-## Setting docker 
-1. CMD to folder  _temp/docker/??? --> Build Docker
-    - folder db : docker build -t romidb ./
-    - folder web : docker build -t romiweb ./ 
+## Setup 
+1. CMD to folder  _temp/docker/??? --> ***Build Docker***
+    - folder db : ``` docker build -t romidb ./ ```
+    - folder web : ``` docker build -t romiweb ./ ```
 
 2. Run 2 Docker
-    - docker run -d -v D:\Hotel\dockerdb\romi:/var/lib/mysql --name romidb romidb 
-    - docker run -d --link romidb:romidb  -v D:\Hotelprohoma-develop-mone\romi:/var/www/html --name romiweb romiweb
+     ```docker run -d -v D:\Hotel\dockerdb\romi:/var/lib/mysql --name romidb romidb ```
+    ``` docker run -d --link romidb:romidb  -v your-path\romi:/var/www/html --name romiweb romiweb ```
 
 3. Create a folder at the same level as the project dockerdb / romidb
 
@@ -20,25 +20,25 @@ port of XDebug in web hostname/port : 9009:9000
 ```
 > General in web : XDEBUG_CONFIG : remote_host=192.168.1.8 ( ip adress wirless)
 
-3. Setting mysql db: (***Exec by Kitematic***)
+4. Setting mysql db: (***Exec by Kitematic***)
 
-- GRANT ALL PRIVILEGES ON romidb.* TO 'root'@'%' WITH GRANT OPTION;
+```GRANT ALL PRIVILEGES ON romidb.* TO 'root'@'%' WITH GRANT OPTION; ```
 
-Allow conection DB 
-GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY 'debian' WITH GRANT OPTION;
-mysql -h 172.0.0.1 -u root -p
+- Allow conection DB 
+```GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY 'debian' WITH GRANT OPTION;```
+```mysql -h 172.0.0.1 -u root -p```
 
 
-4. Install php local > 5.5 
-5. composer config -g -- disable-tls true
-6. composer install --> from kimatic 
+5. Install php local > 5.5 
+6. composer config -g -- disable-tls true
+7. composer install --> from kimatic 
 
-7. Configure .env and .env.test files.
-8. Configure migrations-db.php
+8. Configure .env and .env.test files.
+9. Configure migrations-db.php
     - create version to migrate : ```php migrations.php generate```
     - Perform migration to feed data : ```php migrations.php migrate```
 
-9. Deploy schema
+10. Deploy schema
 ```
 php vendor/bin/doctrine orm:schema-tool:create
 php vendor/bin/doctrine orm:schema-tool:update --force
@@ -47,7 +47,7 @@ php vendor/bin/doctrine orm:clear-cache:metadata
 add folder var/doctrine; var/logs
 ```
 
-10. Setting XDebug: 
+11. Setting XDebug: 
 - if hasn't file xdebug.ini, Create file xdebug.ini
 ```
 cp /var/www/html/20-xdebug.ini 
@@ -90,7 +90,7 @@ Config file launch.json
 
 ```
 
-11. Setting another composer: 
+12. Setting another composer: 
     - Composer ACL: *** composer require zendframework/zend-permissions-acl *** 
 > https://framework.zend.com/blog/2017-05-09-zend-permissions-acl.html
     - Composer swift mailer: *** composer require andrewdyer/slim3-mailer ***
