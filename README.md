@@ -88,10 +88,8 @@ Config file launch.json
 
 12. Setting another composer: 
     - Composer ACL: 
-        ```composer require zendframework/zend-permissions-acl
-            https://framework.zend.com/blog/2017-05-09-zend-permissions-acl.html
-        ```
+        - composer require zendframework/zend-permissions-acl
+        - https://framework.zend.com/blog/2017-05-09-zend-permissions-acl.html
     - Composer swift mailer: 
-        ```composer require andrewdyer/slim3-mailer
-            https://github.com/andrewdyer/slim3-mailer
-        ```
+        - composer require andrewdyer/slim3-mailer
+        - https://github.com/andrewdyer/slim3-mailer
