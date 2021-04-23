@@ -3,12 +3,12 @@
 
 ## Setup 
 1. CMD to folder  _temp/docker/??? --> ***Build Docker***
-    - folder db : ``` docker build -t romidb ./ ```
-    - folder web : ``` docker build -t romiweb ./ ```
+    - folder db : *** docker build -t romidb ./ ***
+    - folder web : *** docker build -t romiweb ./ ***
 
 2. Run 2 Docker
-     ```docker run -d -v D:\Hotel\dockerdb\romi:/var/lib/mysql --name romidb romidb ```
-    ``` docker run -d --link romidb:romidb  -v your-path\romi:/var/www/html --name romiweb romiweb ```
+    - docker run -d -v D:\Hotel\dockerdb\romi:/var/lib/mysql --name romidb romidb
+    - docker run -d --link romidb:romidb  -v your-path\romi:/var/www/html --name romiweb romiweb 
 
 3. Create a folder at the same level as the project dockerdb / romidb
 
@@ -21,22 +21,18 @@ port of XDebug in web hostname/port : 9009:9000
 > General in web : XDEBUG_CONFIG : remote_host=192.168.1.8 ( ip adress wirless)
 
 4. Setting mysql db: (***Exec by Kitematic***)
-
 ```GRANT ALL PRIVILEGES ON romidb.* TO 'root'@'%' WITH GRANT OPTION; ```
-
 - Allow conection DB 
-```GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY 'debian' WITH GRANT OPTION;```
-```mysql -h 172.0.0.1 -u root -p```
-
+    - GRANT ALL PRIVILEGES ON . TO 'root'@'%' IDENTIFIED BY 'debian' WITH GRANT OPTION;
+    - mysql -h 172.0.0.1 -u root -p
 
 5. Install php local > 5.5 
 6. composer config -g -- disable-tls true
 7. composer install --> from kimatic 
-
 8. Configure .env and .env.test files.
 9. Configure migrations-db.php
-    - create version to migrate : ```php migrations.php generate```
-    - Perform migration to feed data : ```php migrations.php migrate```
+    - create version to migrate : ***php migrations.php generate***
+    - Perform migration to feed data : ***php migrations.php migrate***
 
 10. Deploy schema
 ```
